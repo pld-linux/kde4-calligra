@@ -80,7 +80,7 @@ BuildRequires:	qt4-qmake >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.600
 BuildRequires:	rpm-pythonprov
 BuildRequires:	soprano-devel
-BuildRequires:	sqlite3-devel >= 3.6.23
+BuildRequires:	sqlite3-devel >= 3.7.13-2
 BuildRequires:	xbase-devel
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)

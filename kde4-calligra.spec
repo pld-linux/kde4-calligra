@@ -363,7 +363,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files common
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/koconverter
+%attr(755,root,root) %{_bindir}/calligraconverter
 %attr(755,root,root) %{_libdir}/libkdchart.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libkdchart.so.?
 %attr(755,root,root) %{_libdir}/libkochart.so.*.*.*
@@ -909,10 +909,13 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %exclude %{_libdir}/libkdeinit4_*.so
-#%%exclude %{_libdir}/libkdeinit_*.so
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_includedir}/*.h
+%{_includedir}/KoTextSoftPageBreak.cpp
 %{_includedir}/changetracker
-%{_includedir}/kexi
+%{_includedir}/office
+%{_includedir}/sheets
+%{_includedir}/stage
 %{_includedir}/styles
-%{_datadir}/apps/cmake/modules/FindKOfficeLibs.cmake
+%{_includedir}/words
+%{_datadir}/apps/cmake/modules/FindCalligraLibs.cmake

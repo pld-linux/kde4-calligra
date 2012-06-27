@@ -1,9 +1,20 @@
-# TODO
-# -- The following OPTIONAL packages could NOT be located on your system.
-# -- Consider installing them to enable more features from this software.
-# + OpenCTL, 0.9.2 or higher: OpenCTL is needed for some color spaces (High Dynamic Range Color Spaces, YCbCr and LMS) <http://www.openctl.org>
-# + Spnav: Spnav is the library which is required by the space navigator device plugin <http://spacenav.sourceforge.net/>
-# + pstoedit: The Karbon eps import filter will not be built. <http://www.pstoedit.net/>
+# TODO:
+#-----------------------------------------------------------------------------
+#-- The following OPTIONAL packages could NOT be located on your system.
+#-- Consider installing them to enable more features from this software.
+#-----------------------------------------------------------------------------
+#   * OpenCTL (0.9.10 or higher)  <http://www.opengtl.org>
+#     Free Color Transformation Language implementation (part of OpenGTL)
+#     Required for High Dynamic Range Color Spaces, YCbCr and LMS support
+#   * OpenShiva  <http://www.opengtl.org>
+#     OpenShiva interpreter for the Shiva Kernel Language (part of OpenGTL)
+#     Required for Shiva based Generators and Filters
+#   * QtShiva  <http://www.opengtl.org>
+#     Qt bindings for the OpenShiva interpreter (part of libQtGTL)
+#     Required for Shiva based Generators and Filters
+#   * Spnav  <http://spacenav.sourceforge.net/> 
+#     3Dconnexion device driver and SDK
+#     Required by SpaceNavigator 3D mouse plugin
 #
 # Conditional build:
 %bcond_without	pdf		# build without PDF support
@@ -29,6 +40,7 @@ BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	OpenGL-glut-devel
 BuildRequires:	QtXmlPatterns-devel
 BuildRequires:	automoc4 >= 0.9.88
+BuildRequires:	attica-devel
 BuildRequires:	boost-devel
 BuildRequires:	bzip2-devel
 BuildRequires:	cmake >= 2.8.0
@@ -57,7 +69,6 @@ BuildRequires:	libicu-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libpqxx-devel
-#BuildRequires:	libspnav-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	libwpd-devel >= 0.9
@@ -67,11 +78,12 @@ BuildRequires:	libxml2-devel >= 0:2.4.8
 BuildRequires:	libxslt-devel >= 1.0.7
 BuildRequires:	mysql-devel
 BuildRequires:	openjpeg-devel >= 1.3
+BuildRequires:	openssl-devel
 BuildRequires:	pkgconfig
 %if %{with pdf}
 BuildRequires:	poppler-Qt-devel >= 0.6
 %endif
-#BuildRequires:	pstoedit
+BuildRequires:	pstoedit
 BuildRequires:	python-devel >= 2.2
 BuildRequires:	qca-devel >= 2.0.0
 BuildRequires:	qimageblitz-devel

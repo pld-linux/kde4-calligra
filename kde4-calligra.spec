@@ -12,7 +12,7 @@
 #   * QtShiva  <http://www.opengtl.org>
 #     Qt bindings for the OpenShiva interpreter (part of libQtGTL)
 #     Required for Shiva based Generators and Filters
-#   * Spnav  <http://spacenav.sourceforge.net/> 
+#   * Spnav  <http://spacenav.sourceforge.net/>
 #     3Dconnexion device driver and SDK
 #     Required by SpaceNavigator 3D mouse plugin
 #
@@ -42,8 +42,8 @@ BuildRequires:	OpenEXR-devel
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	OpenGL-glut-devel
 BuildRequires:	QtXmlPatterns-devel
-BuildRequires:	automoc4 >= 0.9.88
 BuildRequires:	attica-devel
+BuildRequires:	automoc4 >= 0.9.88
 BuildRequires:	boost-devel
 BuildRequires:	bzip2-devel
 BuildRequires:	cmake >= 2.8.0
@@ -91,8 +91,8 @@ BuildRequires:	qca-devel >= 2.0.0
 BuildRequires:	qimageblitz-devel
 BuildRequires:	qt4-build >= %{qtver}
 BuildRequires:	qt4-qmake >= %{qtver}
-BuildRequires:	rpmbuild(macros) >= 1.600
 BuildRequires:	rpm-pythonprov
+BuildRequires:	rpmbuild(macros) >= 1.600
 BuildRequires:	soprano-devel
 BuildRequires:	sqlite3-devel >= 3.7.13-2
 BuildRequires:	xbase-devel
@@ -220,14 +220,13 @@ Obsoletes:	kde4-koffice-kivio
 
 %description flow
 Flow on the surface is your everyday flowcharting program. Underneath
-this skin, however, lies much more. Flow will offer basic
-flowcharting abilities, but with a twist. Objects are scriptable, and
-a backend plugin system will offer the ability to make objects do just
-about anything. Feed it a directory of C++ header files, or even Java
-files, and let it generate a graphical class map for you. Give it a
-network and let it explore and map out the network for you. All this
-is possible through the scripting/plugin architecture Flow will
-possess.
+this skin, however, lies much more. Flow will offer basic flowcharting
+abilities, but with a twist. Objects are scriptable, and a backend
+plugin system will offer the ability to make objects do just about
+anything. Feed it a directory of C++ header files, or even Java files,
+and let it generate a graphical class map for you. Give it a network
+and let it explore and map out the network for you. All this is
+possible through the scripting/plugin architecture Flow will possess.
 
 %description flow -l pl.UTF-8
 Flow jest programem typu flowcharting. Pod tym pojęciem jednak kryje
@@ -271,8 +270,8 @@ PowerPoint in the windows world. You can use it for doing screen
 presentations or transparencies.
 
 %description stage -l pl.UTF-8
-Stage jest aplikacją Calligra do tworzenia prezentacji, podobną do
-MS PowerPoint. Możesz użyć jej do tworzenia wizualnych prezentacji.
+Stage jest aplikacją Calligra do tworzenia prezentacji, podobną do MS
+PowerPoint. Możesz użyć jej do tworzenia wizualnych prezentacji.
 
 %package krita
 Summary:	Calligra - Krita
@@ -327,7 +326,9 @@ również do zwykłej edycji tekstu (jak pisanie listów, raportów, itp.).
 install -d build
 cd build
 %cmake \
+	-DBUILD_cstester:BOOL=OFF \
 	-DBUILD_active:BOOL=OFF \
+	-DBUILD_koabstraction:BOOL=OFF \
 	-DBUILD_mobile:BOOL=OFF \
 	../
 
@@ -378,6 +379,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/calligra
 %attr(755,root,root) %{_bindir}/calligraconverter
+%attr(755,root,root) %{_bindir}/kthesaurus
 %attr(755,root,root) %{_libdir}/libRtfReader.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libRtfReader.so.?
 %attr(755,root,root) %{_libdir}/libchartshapelib.so.*.*.*
@@ -424,18 +426,22 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde4/autocorrect.so
 %attr(755,root,root) %{_libdir}/kde4/calligradockers.so
 %attr(755,root,root) %{_libdir}/kde4/calligragoogledocs.so
+%attr(755,root,root) %{_libdir}/kde4/calligrascan.so
 %attr(755,root,root) %{_libdir}/kde4/calligrathumbnail.so
 %attr(755,root,root) %{_libdir}/kde4/changecase.so
 %attr(755,root,root) %{_libdir}/kde4/chartshape.so
 %attr(755,root,root) %{_libdir}/kde4/commentshape.so
 %attr(755,root,root) %{_libdir}/kde4/defaulttools.so
 %attr(755,root,root) %{_libdir}/kde4/formulashape.so
+%attr(755,root,root) %{_libdir}/kde4/generickofilter.so
 %attr(755,root,root) %{_libdir}/kde4/kodocinfopropspage.so
 %attr(755,root,root) %{_libdir}/kde4/kolcmsengine.so
 %attr(755,root,root) %{_libdir}/kde4/kopabackgroundtool.so
 %attr(755,root,root) %{_libdir}/kde4/koreport_barcodeplugin.so
 %attr(755,root,root) %{_libdir}/kde4/koreport_chartplugin.so
+%attr(755,root,root) %{_libdir}/kde4/koreport_mapsplugin.so
 %attr(755,root,root) %{_libdir}/kde4/koreport_webplugin.so
+%attr(755,root,root) %{_libdir}/kde4/kounavailpart.so
 %attr(755,root,root) %{_libdir}/kde4/musicshape.so
 %attr(755,root,root) %{_libdir}/kde4/okularGenerator_odp.so
 %attr(755,root,root) %{_libdir}/kde4/pathshapes.so
@@ -446,12 +452,16 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde4/spreadsheetshape.so
 %attr(755,root,root) %{_libdir}/kde4/textshape.so
 %attr(755,root,root) %{_libdir}/kde4/textvariables.so
+%attr(755,root,root) %{_libdir}/kde4/treeshape.so
 %attr(755,root,root) %{_libdir}/kde4/thesaurustool.so
 %attr(755,root,root) %{_libdir}/kde4/vectorshape.so
 %attr(755,root,root) %{_libdir}/kde4/videoshape.so
 %attr(755,root,root) %{_libdir}/kde4/webshape.so
-%{_datadir}/applications/kde4/calligra.desktop
-%{_datadir}/applications/kde4/okularApplication_odp.desktop
+%attr(755,root,root) %{_libdir}/kde4/xsltexport.so
+%attr(755,root,root) %{_libdir}/kde4/xsltimport.so
+%{_desktopdir}/kde4/calligra.desktop
+%{_desktopdir}/kde4/okularApplication_odp.desktop
+%{_desktopdir}/kde4/KThesaurus.desktop
 %{_datadir}/kde4/services/artistictextshape.desktop
 %{_datadir}/kde4/services/autocorrect.desktop
 %{_datadir}/kde4/services/calligradockers.desktop
@@ -463,13 +473,17 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/commentshape.desktop
 %{_datadir}/kde4/services/defaulttools.desktop
 %{_datadir}/kde4/services/formulashape.desktop
+%{_datadir}/kde4/services/generic_filter.desktop
 %{_datadir}/kde4/services/kexirelationdesignshape.desktop
+%{_datadir}/kde4/services/kformulapart.desktop
 %{_datadir}/kde4/services/kodocinfopropspage.desktop
 %{_datadir}/kde4/services/kolcmsengine.desktop
 %{_datadir}/kde4/services/kopabackgroundtool.desktop
 %{_datadir}/kde4/services/koreport_barcodeplugin.desktop
 %{_datadir}/kde4/services/koreport_chartplugin.desktop
+%{_datadir}/kde4/services/koreport_mapsplugin.desktop
 %{_datadir}/kde4/services/koreport_webplugin.desktop
+%{_datadir}/kde4/services/kounavail.desktop
 %{_datadir}/kde4/services/libokularGenerator_odp.desktop
 %{_datadir}/kde4/services/musicshape.desktop
 %{_datadir}/kde4/services/okularOdp.desktop
@@ -483,9 +497,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/textshape.desktop
 %{_datadir}/kde4/services/textvariables.desktop
 %{_datadir}/kde4/services/thesaurustool.desktop
+%{_datadir}/kde4/services/treeshape.desktop
 %{_datadir}/kde4/services/vectorshape.desktop
 %{_datadir}/kde4/services/videoshape.desktop
 %{_datadir}/kde4/services/webshape.desktop
+%{_datadir}/kde4/services/xslt_export.desktop
+%{_datadir}/kde4/services/xslt_import.desktop
 %{_datadir}/kde4/servicetypes/calligra_application.desktop
 %{_datadir}/kde4/servicetypes/calligra_deferred_plugin.desktop
 %{_datadir}/kde4/servicetypes/calligradocker.desktop
@@ -505,16 +522,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/formulashape
 %{_datadir}/apps/koproperty
 %{_datadir}/apps/musicshape
+%{_datadir}/apps/xsltfilter
 %{_datadir}/mime/packages/msooxml-all.xml
 %{_datadir}/color/icc/pigment
 %{_iconsdir}/hicolor/*/*/*
 %{_iconsdir}/oxygen/*/*/*
 %{_kdedocdir}/en/calligra
-
+%{_kdedocdir}/en/thesaurus
 %dir %{_datadir}/templates/.source
-#%{_desktopdir}/kde4/koffice.desktop
-#%{_desktopdir}/kde4/okularApplication_odp.desktop
-# these libs actually need to be here, to prevent LOOPS
 
 %files karbon
 %defattr(644,root,root,755)
@@ -525,7 +540,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde4/*karbon*.*
 %attr(755,root,root) %{_libdir}/kde4/wmfexport.*
 %attr(755,root,root) %{_libdir}/kde4/wmfimport.*
-%{_datadir}/applications/kde4/*karbon.desktop
+%{_desktopdir}/kde4/*karbon.desktop
 %{_datadir}/apps/karbon
 %{_datadir}/config/karbonrc
 %{_datadir}/kde4/services/karbon*
@@ -542,7 +557,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libkdeinit4_calligraflow.so
 %attr(755,root,root) %{_libdir}/libflowprivate.so.*
 %attr(755,root,root) %{_libdir}/kde4/*flow*.*
-%{_datadir}/applications/kde4/flow.desktop
+%{_desktopdir}/kde4/flow.desktop
 %{_datadir}/apps/flow
 %{_datadir}/config/flowrc
 %{_datadir}/config/flow_stencils.knsrc
@@ -569,7 +584,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde4/kformdesigner_webbrowser.so
 %attr(755,root,root) %{_libdir}/kde4/krossmodulekexidb.so
 %{_datadir}/apps/kexi
-%{_datadir}/applications/kde4/*kexi.desktop
+%{_desktopdir}/kde4/*kexi.desktop
 %{_datadir}/config/kexirc
 %{_datadir}/kde4/servicetypes/kexi*.desktop
 %{_datadir}/kde4/services/kexi
@@ -604,6 +619,11 @@ rm -rf $RPM_BUILD_ROOT
 # kexi-spreadsheet-import
 %attr(755,root,root) %{_libdir}/kde4/keximigrate_spreadsheet.so
 %{_datadir}/kde4/services/keximigrate_spreadsheet.desktop
+# kexi-driver-xbase
+%attr(755,root,root) %{_libdir}/kde4/kexidb_xbasedriver.so
+%attr(755,root,root) %{_libdir}/kde4/keximigrate_xbase.so
+%{_datadir}/kde4/services/kexidb_xbasedriver.desktop
+%{_datadir}/kde4/services/keximigrate_xbase.desktop
 
 %files plan
 %defattr(644,root,root,755)
@@ -626,8 +646,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde4/planpart.*
 %attr(755,root,root) %{_libdir}/kde4/plantjscheduler.so
 %attr(755,root,root) %{_libdir}/kde4/planworkpart.so
-%{_datadir}/applications/kde4/plan.desktop
-%{_datadir}/applications/kde4/planwork.desktop
+%{_desktopdir}/kde4/plan.desktop
+%{_desktopdir}/kde4/planwork.desktop
 %{_datadir}/apps/plan
 %{_datadir}/apps/planwork
 %{_datadir}/config.kcfg/plansettings.kcfg
@@ -651,7 +671,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde4/powerpointimport.*
 %attr(755,root,root) %{_libdir}/kde4/pptximport.*
 %attr(755,root,root) %{_libdir}/kde4/*stage*.*
-%{_datadir}/applications/kde4/*stage.desktop
+%{_desktopdir}/kde4/*stage.desktop
 %{_datadir}/apps/stage
 %{_datadir}/config/stagerc
 %{_datadir}/kde4/services/Filterkpr2odf.desktop
@@ -672,7 +692,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libkdeinit4_krita.so
 %attr(755,root,root) %{_libdir}/libkrita*.so.*
 %attr(755,root,root) %{_libdir}/kde4/*krita*.*
-%{_datadir}/applications/kde4/*krita*.desktop
+%{_desktopdir}/kde4/*krita*.desktop
 %{_datadir}/apps/krita
 %{_datadir}/apps/kritaplugins
 %{_datadir}/color/icc/krita
@@ -709,7 +729,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde4/qproimport.*
 %attr(755,root,root) %{_libdir}/kde4/spreadsheetshape-deferred.so
 %attr(755,root,root) %{_libdir}/kde4/xlsximport.*
-%{_datadir}/applications/kde4/sheets.desktop
+%{_desktopdir}/kde4/sheets.desktop
 %{_datadir}/apps/sheets/
 %{_datadir}/config.kcfg/sheets.kcfg
 %{_datadir}/config/sheetsrc
@@ -731,19 +751,39 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/calligrawords
 %attr(755,root,root) %{_libdir}/libkdeinit4_calligrawords.so
 %attr(755,root,root) %{_libdir}/libwordsprivate.so.*
-%attr(755,root,root) %{_libdir}/kde4/applixwordimport.*
+%attr(755,root,root) %{_libdir}/libwordsexportfilters.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libwordsexportfilters.so.?
+%attr(755,root,root) %{_libdir}/kde4/abiwordexport.so
+%attr(755,root,root) %{_libdir}/kde4/abiwordimport.so
+%attr(755,root,root) %{_libdir}/kde4/amiproexport.so
+%attr(755,root,root) %{_libdir}/kde4/amiproimport.so
+%attr(755,root,root) %{_libdir}/kde4/applixwordimport.so
+%attr(755,root,root) %{_libdir}/kde4/asciiexport.so
 %attr(755,root,root) %{_libdir}/kde4/asciiimport.so
-%attr(755,root,root) %{_libdir}/kde4/docximport.*
-%attr(755,root,root) %{_libdir}/kde4/htmlodf_export.*
-%attr(755,root,root) %{_libdir}/kde4/mswordodf_import.*
-%attr(755,root,root) %{_libdir}/kde4/rtfimport.*
-%attr(755,root,root) %{_libdir}/kde4/wordspart.*
-%attr(755,root,root) %{_libdir}/kde4/wpgimport.*
-%{_datadir}/applications/kde4/words.desktop
+%attr(755,root,root) %{_libdir}/kde4/docbookexport.so
+%attr(755,root,root) %{_libdir}/kde4/docximport.so
+%attr(755,root,root) %{_libdir}/kde4/hancomwordimport.so
+%attr(755,root,root) %{_libdir}/kde4/htmlodf_export.so
+%attr(755,root,root) %{_libdir}/kde4/kwordkword1dot3import.so
+%attr(755,root,root) %{_libdir}/kde4/mswordodf_import.so
+%attr(755,root,root) %{_libdir}/kde4/oowriterexport.so
+%attr(755,root,root) %{_libdir}/kde4/oowriterimport.so
+%attr(755,root,root) %{_libdir}/kde4/palmdocexport.so
+%attr(755,root,root) %{_libdir}/kde4/palmdocimport.so
+%attr(755,root,root) %{_libdir}/kde4/rtfexport.so
+%attr(755,root,root) %{_libdir}/kde4/rtfimport.so
+%attr(755,root,root) %{_libdir}/kde4/wordspart.so
+%attr(755,root,root) %{_libdir}/kde4/wpexport.so
+%attr(755,root,root) %{_libdir}/kde4/wpgimport.so
+%attr(755,root,root) %{_libdir}/kde4/wpimport.so
+%attr(755,root,root) %{_libdir}/kde4/wmlexport.so
+%attr(755,root,root) %{_libdir}/kde4/wmlimport.so
+%{_desktopdir}/kde4/words.desktop
 %{_datadir}/apps/words
 %{_datadir}/config/wordsrc
 %{_datadir}/kde4/services/html-odf_export.desktop
 %{_datadir}/kde4/services/ServiceMenus/words_konqi.desktop
+%{_datadir}/kde4/services/words_*_export.desktop
 %{_datadir}/kde4/services/words_*_import.desktop
 %{_datadir}/kde4/services/wordspart.desktop
 %{_datadir}/templates/.source/TextDocument.*
@@ -755,7 +795,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libbraindumpcore.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libbraindumpcore.so.?
 %attr(755,root,root) %{_libdir}/kde4/stateshape.so
-%{_datadir}/applications/kde4/braindump.desktop
+%{_desktopdir}/kde4/braindump.desktop
 %{_datadir}/apps/braindump
 %{_datadir}/apps/stateshape
 %{_datadir}/kde4/servicetypes/braindump_extensions.desktop

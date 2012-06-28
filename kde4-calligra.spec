@@ -327,6 +327,8 @@ również do zwykłej edycji tekstu (jak pisanie listów, raportów, itp.).
 install -d build
 cd build
 %cmake \
+	-DBUILD_active:BOOL=OFF \
+	-DBUILD_mobile:BOOL=OFF \
 	../
 
 %{__make}

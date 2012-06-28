@@ -769,7 +769,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/KoTextSoftPageBreak.cpp
 %{_includedir}/changetracker
 %{_includedir}/kexi
-%{_includedir}/office
 %{_includedir}/sheets
 %{_includedir}/stage
 %{_includedir}/styles

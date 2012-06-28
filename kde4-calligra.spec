@@ -83,7 +83,8 @@ BuildRequires:	pkgconfig
 %if %{with pdf}
 BuildRequires:	poppler-Qt-devel >= 0.6
 %endif
-BuildRequires:	pstoedit
+BuildRequires:	pstoedit-devel
+BuildRequires:	pstoedit-drv-lplot
 BuildRequires:	python-devel >= 2.2
 BuildRequires:	qca-devel >= 2.0.0
 BuildRequires:	qimageblitz-devel
@@ -95,6 +96,7 @@ BuildRequires:	soprano-devel
 BuildRequires:	sqlite3-devel >= 3.7.13-2
 BuildRequires:	xbase-devel
 BuildRequires:	zlib-devel
+Obsoletes:	kde4-koffice
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -106,7 +108,7 @@ Calligra contains:
 - Flow - An easy to use diagramming and flowcharting application
 - Karbon - A vector-based drawing application
 - Krita - A pixel-based drawing application like The GIMP
-- Braindump - A tool to dump and organize the content of your brain
+- Braindump - A notes and idea gathering application
 - Kexi - A visual database creator
 - Plan - A project management application
 
@@ -119,7 +121,7 @@ Pakiet zawiera:
 - Flow - aplikacja do tworzenia diagramów
 - Karbon - aplikacja do edycji grafiki wektorowej
 - Krita - aplikacja do edycji grafiki bitmapowej
-- Braindump - narzędzie do ogranizacji pomysłow
+- Braindump - narzędzie do ogranizacji pomysłow i notatek
 - Kexi - narzędzie do tworzenia baz danych
 - Plan - aplikacja do zarządzania projektami
 
@@ -128,6 +130,7 @@ Summary:	Calligra - header files
 Summary(pl.UTF-8):	Calligra - pliki nagłówkowe
 Group:		X11/Development/Libraries
 Requires:	%{name}-common = %{version}-%{release}
+Obsoletes:	kde4-koffice-devel
 
 %description devel
 This package includes the header files you will need to compile
@@ -142,6 +145,7 @@ Summary:	Calligra - common files and libraries
 Summary(pl.UTF-8):	Calligra - wspólne pliki i biblioteki
 Group:		X11/Applications
 Requires:	kde4-kdebase-workspace >= %{kdever}
+Obsoletes:	kde4-koffice-common
 
 %description common
 Calligra is an integrated office suite for K Desktop Environment.
@@ -180,26 +184,15 @@ Summary:	Calligra - Karbon
 Summary(pl.UTF-8):	Calligra - Karbon
 Group:		X11/Applications
 Requires:	%{name}-common = %{version}-%{release}
+Requires:	pstoedit
+Requires:	pstoedit-drv-lplot
 Obsoletes:	kde4-koffice-karbon
 
 %description karbon
 Karbon is a vector graphics application within Calligra.
 
 %description karbon -l pl.UTF-8
-Karbon to aplikacja koffice służąca do rysowania grafiki wektorowej,
-
-%package kchart
-Summary:	KOffice - KChart
-Summary(pl.UTF-8):	KOffice - KChart
-Group:		X11/Applications
-Requires:	%{name}-common = %{version}-%{release}
-
-%description kchart
-KChart is KOffice part for generating diagrams from data, e.g. pie and
-bar charts.
-
-%description kchart -l pl.UTF-8
-KChart jest aplikacją służącą do generowania wykresów.
+Karbon to aplikacja służąca do rysowania grafiki wektorowej,
 
 %package kexi
 Summary:	Calligra - Kexi
@@ -216,76 +209,91 @@ Kexi jest aplikacją służącą do korzystania z systemów baz danych
 takich jak MySQL.
 
 %package kformula
-Summary:	KOffice - kformula
-Summary(pl.UTF-8):	KOffice - kformula
+Summary:	Calligra - kformula
+Summary(pl.UTF-8):	Calligra - kformula
 Group:		X11/Applications
 Requires:	%{name}-common = %{version}-%{release}
+Obsoletes:	kde4-koffice-kformula
 
 %description kformula
-KFormula is KOffice part for creating formulas, equations, etc...
+KFormula is Calligra part for creating formulas, equations, etc...
 
 %description kformula -l pl.UTF-8
 KFormula jest aplikacją służącą do tworzenia wzorów, równań itp.
 
-%package kivio
-Summary:	KOffice - kivio
-Summary(pl.UTF-8):	KOffice - kivio
+%package flow
+Summary:	Calligra - Flow
+Summary(pl.UTF-8):	Calligra - Flow
 Group:		X11/Applications
 Requires:	%{name}-common = %{version}-%{release}
+Obsoletes:	kde4-koffice-kchart
+Obsoletes:	kde4-koffice-kivio
 
-%description kivio
-Kivio on the surface is your everyday flowcharting program. Underneath
-this skin, however, lies much more. Kivio will offer basic
+%description flow
+Flow on the surface is your everyday flowcharting program. Underneath
+this skin, however, lies much more. Flow will offer basic
 flowcharting abilities, but with a twist. Objects are scriptable, and
 a backend plugin system will offer the ability to make objects do just
 about anything. Feed it a directory of C++ header files, or even Java
 files, and let it generate a graphical class map for you. Give it a
 network and let it explore and map out the network for you. All this
-is possible through the scripting/plugin architecture Kivio will
+is possible through the scripting/plugin architecture Flow will
 possess.
 
-%description kivio -l pl.UTF-8
-Kivio jest programem typu flowcharting. Pod tym pojęciem jednak kryje
-się znacznie więcej. Kivio dostarcza najpotrzebniejsze funkcje, ale
+%description flow -l pl.UTF-8
+Flow jest programem typu flowcharting. Pod tym pojęciem jednak kryje
+się znacznie więcej. Flow dostarcza najpotrzebniejsze funkcje, ale
 wszystkie obiekty można rozszerzać za pomocą języka skryptowego, a
 system wtyczek backendowych oferuje możliwość tworzenia obiektów
-dotyczących prawie wszystkiego. Kivio można nakarmić katalogiem plików
+dotyczących prawie wszystkiego. Flow można nakarmić katalogiem plików
 nagłówkowych C++ lub plików Javy i pozwolić wygenerować graficzną mapę
 klas. Po podaniu sieci przejrzy ją i stworzy jej mapę. Wszystko to
-jest możliwe poprzez architekturę skryptów i wtyczek Kivio.
+jest możliwe poprzez architekturę skryptów i wtyczek Flow.
 
-%package kplato
-Summary:	KOffice - KPlato
-Summary(pl.UTF-8):	KOffice - KPlato
+%package braindump
+Summary:	Calligra - Braindump
+Summary(pl.UTF-8):	Calligra - Braindump
 Group:		X11/Applications
 Requires:	%{name}-common = %{version}-%{release}
 
-%description kplato
-KPlato is a project management application.
+%description braindump
+Braindump is a notes and idea gathering application.
 
-%package kpresenter
-Summary:	KOffice - KPresenter
-Summary(pl.UTF-8):	KOffice - KPresenter
+%package plan
+Summary:	Calligra - Plan
+Summary(pl.UTF-8):	Calligra - Plan
 Group:		X11/Applications
 Requires:	%{name}-common = %{version}-%{release}
+Obsoletes:	kde4-koffice-kplato
 
-%description kpresenter
-KPresenter is a presentation application of the KOffice, similar to MS
+%description plan
+Plan is a project management application.
+
+%package stage
+Summary:	Calligra - Stage
+Summary(pl.UTF-8):	Calligra - Stage
+Group:		X11/Applications
+Requires:	%{name}-common = %{version}-%{release}
+Obsoletes:	kde4-koffice-kpresenter
+
+%description stage
+Stage is a presentation application of the Calligra, similar to MS
 PowerPoint in the windows world. You can use it for doing screen
 presentations or transparencies.
 
-%description kpresenter -l pl.UTF-8
-KPresenter jest aplikacją KOffice do tworzenia prezentacji, podobną do
+%description stage -l pl.UTF-8
+Stage jest aplikacją Calligra do tworzenia prezentacji, podobną do
 MS PowerPoint. Możesz użyć jej do tworzenia wizualnych prezentacji.
 
 %package krita
-Summary:	KOffice - Krita
-Summary(pl.UTF-8):	KOffice - Krita
+Summary:	Calligra - Krita
+Summary(pl.UTF-8):	Calligra - Krita
 Group:		X11/Applications
 Requires:	%{name}-common = %{version}-%{release}
+Obsoletes:	kde4-koffice-krita
 
 %description krita
-Krita is a painting and image editing application for KOffice. It
+Krita is a painting and image editing application for Calligra. It
 supports many color spaces like RGB, grayscale, CMYK, Lab, YCBCR and
 LMS, in 8 and 16 bits per channel
 
@@ -294,31 +302,33 @@ Krita jest aplikacją do edycji grafiki bitmapowej. Wspiera różne
 przestrzenie barw, jak np. RGB, skala szarości, CMYK, Lab, YCBCR oraz
 LMS - zarówno w trybie 8 jak i 16 bitowym na kanał.
 
-%package kspread
-Summary:	KOffice - KSpread
-Summary(pl.UTF-8):	KOffice - KSpread
+%package sheets
+Summary:	Calligra - Sheets
+Summary(pl.UTF-8):	Calligra - Sheets
 Group:		X11/Applications
 Requires:	%{name}-common = %{version}-%{release}
+Obsoletes:	kde4-koffice-kspread
 
-%description kspread
-KSpread is the spread sheet of the KOffice, similar to MS Excel.
+%description sheets
+Sheets is the spread sheet of the Calligra, similar to MS Excel.
 
-%description kspread -l pl.UTF-8
-KSpread jest arkuszem kalkulacyjnym, podobnym do MS Excel.
+%description sheets -l pl.UTF-8
+Sheets jest arkuszem kalkulacyjnym, podobnym do MS Excel.
 
-%package kword
-Summary:	KOffice - KWord
-Summary(pl.UTF-8):	KOffice - KWord
+%package words
+Summary:	Calligra - Words
+Summary(pl.UTF-8):	Calligra - Words
 Group:		X11/Applications
 Requires:	%{name}-common = %{version}-%{release}
+Obsoletes:	kde4-koffice-kword
 
-%description kword
-KWord is a FrameMaker-like wordprocessor application for KOffice. So
+%description words
+Words is a FrameMaker-like wordprocessor application for Calligra. So
 it can be used for DTP, but also for "normal" wordprocessing (like
 writing letters, reports, etc.).
 
-%description kword -l pl.UTF-8
-KWord jest ramkowym procesorem tekstu. Może być użyty do DTP, ale
+%description words -l pl.UTF-8
+Words jest ramkowym procesorem tekstu. Może być użyty do DTP, ale
 również do zwykłej edycji tekstu (jak pisanie listów, raportów, itp.).
 
 %prep
@@ -349,8 +359,8 @@ rm -rf $RPM_BUILD_ROOT
 %post	karbon	-p /sbin/ldconfig
 %postun	karbon	-p /sbin/ldconfig
 
-%post	kchart	-p /sbin/ldconfig
-%postun	kchart	-p /sbin/ldconfig
+%post	flow	-p /sbin/ldconfig
+%postun	flow	-p /sbin/ldconfig
 
 %post	kexi	-p /sbin/ldconfig
 %postun	kexi	-p /sbin/ldconfig
@@ -358,20 +368,20 @@ rm -rf $RPM_BUILD_ROOT
 %post	kformula	-p /sbin/ldconfig
 %postun	kformula	-p /sbin/ldconfig
 
-%post	kplato	-p /sbin/ldconfig
-%postun	kplato	-p /sbin/ldconfig
+%post	plan	-p /sbin/ldconfig
+%postun	plan	-p /sbin/ldconfig
 
-%post	kpresenter	-p /sbin/ldconfig
-%postun	kpresenter	-p /sbin/ldconfig
+%post	stage	-p /sbin/ldconfig
+%postun	stage	-p /sbin/ldconfig
 
 %post	krita	-p /sbin/ldconfig
 %postun	krita	-p /sbin/ldconfig
 
-%post	kspread	-p /sbin/ldconfig
-%postun	kspread	-p /sbin/ldconfig
+%post	sheets	-p /sbin/ldconfig
+%postun	sheets	-p /sbin/ldconfig
 
-%post	kword	-p /sbin/ldconfig
-%postun	kword	-p /sbin/ldconfig
+%post	words	-p /sbin/ldconfig
+%postun	words	-p /sbin/ldconfig
 
 %files common
 %defattr(644,root,root,755)
@@ -546,7 +556,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/ServiceMenus/karbon_konqi.desktop
 %{_kdedocdir}/en/karbon
 
-%files kchart
+%files flow
 %defattr(644,root,root,755)
 #%attr(755,root,root) %ghost %{_libdir}/kchartcommon.so.?
 #%attr(755,root,root) %{_libdir}/kchartcommon.so.*.*.*
@@ -560,6 +570,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/ServiceMenus/kchart_konqi.desktop
 #%{_iconsdir}/hicolor/*/apps/kchart.png
 #%{_kdedocdir}/en/kchart
+%{_datadir}/kde4/services/ServiceMenus/kivio_konqi.desktop
 
 %files kexi
 %defattr(644,root,root,755)
@@ -659,11 +670,7 @@ rm -rf $RPM_BUILD_ROOT
 #%%{_datadir}/apps/kformula
 %{_kdedocdir}/en/kformula
 
-%files kivio
-%defattr(644,root,root,755)
-%{_datadir}/kde4/services/ServiceMenus/kivio_konqi.desktop
-
-%files kplato
+%files plan
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kplato
 %attr(755,root,root) %{_bindir}/kplatowork
@@ -688,7 +695,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/*/apps/kplato.png
 %{_iconsdir}/hicolor/*/mimetypes/application-x-vnd.kde.kplato.png
 
-%files kpresenter
+%files stage
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kpresenter
 %attr(755,root,root) %{_libdir}/libkdeinit4_kpresenter.so
@@ -842,7 +849,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/mime/packages/krita_ora.xml
 %{_iconsdir}/hicolor/*/apps/krita.png
 
-%files kspread
+%files sheets
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kspread
 %attr(755,root,root) %{_libdir}/libkdeinit4_kspread.so
@@ -877,7 +884,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/*/apps/kspread.png
 %{_kdedocdir}/en/kspread
 
-%files kword
+%files words
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kthesaurus
 %attr(755,root,root) %{_bindir}/kword

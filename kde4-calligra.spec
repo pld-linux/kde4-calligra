@@ -474,6 +474,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/defaulttools.desktop
 %{_datadir}/kde4/services/formulashape.desktop
 %{_datadir}/kde4/services/generic_filter.desktop
+%{_datadir}/kde4/services/kchartpart.desktop
 %{_datadir}/kde4/services/kexirelationdesignshape.desktop
 %{_datadir}/kde4/services/kformulapart.desktop
 %{_datadir}/kde4/services/kodocinfopropspage.desktop
@@ -503,6 +504,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/webshape.desktop
 %{_datadir}/kde4/services/xslt_export.desktop
 %{_datadir}/kde4/services/xslt_import.desktop
+%{_datadir}/kde4/services/ServiceMenus/kchart_konqi.desktop
 %{_datadir}/kde4/servicetypes/calligra_application.desktop
 %{_datadir}/kde4/servicetypes/calligra_deferred_plugin.desktop
 %{_datadir}/kde4/servicetypes/calligradocker.desktop
@@ -534,9 +536,11 @@ rm -rf $RPM_BUILD_ROOT
 %files karbon
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/karbon
-%attr(755,root,root) %{_libdir}/libkarboncommon.so.*
-%attr(755,root,root) %{_libdir}/libkarbonui.so.*
 %attr(755,root,root) %{_libdir}/libkdeinit4_karbon.so
+%attr(755,root,root) %{_libdir}/libkarboncommon.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libkarboncommon.so.?
+%attr(755,root,root) %{_libdir}/libkarbonui.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libkarbonui.so.?
 %attr(755,root,root) %{_libdir}/kde4/*karbon*.*
 %attr(755,root,root) %{_libdir}/kde4/wmfexport.*
 %attr(755,root,root) %{_libdir}/kde4/wmfimport.*
@@ -555,7 +559,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc flow/AUTHORS flow/CHANGE* flow/NOTES flow/README
 %attr(755,root,root) %{_bindir}/calligraflow
 %attr(755,root,root) %{_libdir}/libkdeinit4_calligraflow.so
-%attr(755,root,root) %{_libdir}/libflowprivate.so.*
+%attr(755,root,root) %{_libdir}/libflowprivate.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libflowprivate.so.?
 %attr(755,root,root) %{_libdir}/kde4/*flow*.*
 %{_desktopdir}/kde4/flow.desktop
 %{_datadir}/apps/flow
@@ -570,8 +575,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc kexi/CHANGES kexi/README
 %attr(755,root,root) %{_bindir}/kexi*
-%attr(755,root,root) %{_libdir}/libkexi*.so.*
-%attr(755,root,root) %{_libdir}/libkformdesigner.so.*
+%attr(755,root,root) %{_libdir}/libkexi*.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libkexi*.so.?
+%attr(755,root,root) %{_libdir}/libkformdesigner.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libkformdesigner.so.?
 %attr(755,root,root) %{_libdir}/kde4/kexidb_sqlite3driver.so
 %attr(755,root,root) %{_libdir}/kde4/kexidb_sqlite3_icu.so
 %attr(755,root,root) %{_libdir}/kde4/kexihandler_*.*
@@ -632,18 +639,25 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/calligraplanwork
 %attr(755,root,root) %{_libdir}/libkdeinit4_calligraplan.so
 %attr(755,root,root) %{_libdir}/libkdeinit4_calligraplanwork.so
-%attr(755,root,root) %{_libdir}/libkplatokernel.so.*
-%attr(755,root,root) %{_libdir}/libkplatomodels.so.*
-%attr(755,root,root) %{_libdir}/libkplatoui.so.*
-%attr(755,root,root) %{_libdir}/libplanprivate.so.*
-%attr(755,root,root) %{_libdir}/libplanworkapp.so.*
-%attr(755,root,root) %{_libdir}/libplanworkfactory.so.*
-%attr(755,root,root) %{_libdir}/librcps_plan.so.*
+%attr(755,root,root) %{_libdir}/libkplatokernel.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libkplatokernel.so.?
+%attr(755,root,root) %{_libdir}/libkplatomodels.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libkplatomodels.so.?
+%attr(755,root,root) %{_libdir}/libkplatoui.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libkplatoui.so.?
+%attr(755,root,root) %{_libdir}/libplanprivate.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libplanprivate.so.?
+%attr(755,root,root) %{_libdir}/libplanworkapp.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libplanworkapp.so.?
+%attr(755,root,root) %{_libdir}/libplanworkfactory.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libplanworkfactory.so.?
+%attr(755,root,root) %{_libdir}/librcps_plan.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/librcps_plan.so.?
 %attr(755,root,root) %{_libdir}/kde4/kplatorcpsscheduler.so
 %attr(755,root,root) %{_libdir}/kde4/krossmoduleplan.so
-%attr(755,root,root) %{_libdir}/kde4/planicalexport.*
-%attr(755,root,root) %{_libdir}/kde4/plankplatoimport.*
-%attr(755,root,root) %{_libdir}/kde4/planpart.*
+%attr(755,root,root) %{_libdir}/kde4/planicalexport.so
+%attr(755,root,root) %{_libdir}/kde4/plankplatoimport.so
+%attr(755,root,root) %{_libdir}/kde4/planpart.so
 %attr(755,root,root) %{_libdir}/kde4/plantjscheduler.so
 %attr(755,root,root) %{_libdir}/kde4/planworkpart.so
 %{_desktopdir}/kde4/plan.desktop
@@ -662,15 +676,16 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc stage/AUTHORS stage/CHANGES
 %attr(755,root,root) %{_bindir}/calligrastage
-%attr(755,root,root) %{_libdir}/libcalligrastageprivate.so.*
 %attr(755,root,root) %{_libdir}/libkdeinit4_calligrastage.so
+%attr(755,root,root) %{_libdir}/libcalligrastageprivate.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libcalligrastageprivate.so.?
 %attr(755,root,root) %{_libdir}/kde4/Filterkpr2odf.so
 %attr(755,root,root) %{_libdir}/kde4/kpr_pageeffect_*.so
 %attr(755,root,root) %{_libdir}/kde4/kpr_shapeanimation_*.so
-%attr(755,root,root) %{_libdir}/kde4/kprvariables.*
-%attr(755,root,root) %{_libdir}/kde4/powerpointimport.*
-%attr(755,root,root) %{_libdir}/kde4/pptximport.*
-%attr(755,root,root) %{_libdir}/kde4/*stage*.*
+%attr(755,root,root) %{_libdir}/kde4/kprvariables.so
+%attr(755,root,root) %{_libdir}/kde4/powerpointimport.so
+%attr(755,root,root) %{_libdir}/kde4/pptximport.so
+%attr(755,root,root) %{_libdir}/kde4/*stage*.so
 %{_desktopdir}/kde4/*stage.desktop
 %{_datadir}/apps/stage
 %{_datadir}/config/stagerc
@@ -690,8 +705,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc krita/AUTHORS krita/ChangeLog krita/README
 %attr(755,root,root) %{_bindir}/krita
 %attr(755,root,root) %{_libdir}/libkdeinit4_krita.so
-%attr(755,root,root) %{_libdir}/libkrita*.so.*
-%attr(755,root,root) %{_libdir}/kde4/*krita*.*
+%attr(755,root,root) %{_libdir}/libkrita*.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libkrita*.so.?
+%attr(755,root,root) %{_libdir}/kde4/*krita*.so
 %{_desktopdir}/kde4/*krita*.desktop
 %{_datadir}/apps/krita
 %{_datadir}/apps/kritaplugins
@@ -706,29 +722,30 @@ rm -rf $RPM_BUILD_ROOT
 %files sheets
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/calligrasheets
-%attr(755,root,root) %{_libdir}/libcalligrasheetscommon.so.*
-%attr(755,root,root) %{_libdir}/libcalligrasheetsodf.so
-%attr(755,root,root) %{_libdir}/libcalligrasheetsodf.so.*
 %attr(755,root,root) %{_libdir}/libkdeinit4_calligrasheets.so
-%attr(755,root,root) %{_libdir}/kde4/applixspreadimport.*
+%attr(755,root,root) %{_libdir}/libcalligrasheetscommon.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libcalligrasheetscommon.so.?
+%attr(755,root,root) %{_libdir}/libcalligrasheetsodf.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libcalligrasheetsodf.so.?
+%attr(755,root,root) %{_libdir}/kde4/applixspreadimport.so
 %attr(755,root,root) %{_libdir}/kde4/calligrasheets*.so
-%attr(755,root,root) %{_libdir}/kde4/csvexport.*
-%attr(755,root,root) %{_libdir}/kde4/csvimport.*
-%attr(755,root,root) %{_libdir}/kde4/dbaseimport.*
-%attr(755,root,root) %{_libdir}/kde4/excelimporttodoc.*
-%attr(755,root,root) %{_libdir}/kde4/gnumericexport.*
-%attr(755,root,root) %{_libdir}/kde4/gnumericimport.*
+%attr(755,root,root) %{_libdir}/kde4/csvexport.so
+%attr(755,root,root) %{_libdir}/kde4/csvimport.so
+%attr(755,root,root) %{_libdir}/kde4/dbaseimport.so
+%attr(755,root,root) %{_libdir}/kde4/excelimporttodoc.so
+%attr(755,root,root) %{_libdir}/kde4/gnumericexport.so
+%attr(755,root,root) %{_libdir}/kde4/gnumericimport.so
 %attr(755,root,root) %{_libdir}/kde4/krossmodulekspread.so
-%attr(755,root,root) %{_libdir}/kde4/kspread*export.*
-%attr(755,root,root) %{_libdir}/kde4/kspread*import.*
+%attr(755,root,root) %{_libdir}/kde4/kspread*export.so
+%attr(755,root,root) %{_libdir}/kde4/kspread*import.so
 %attr(755,root,root) %{_libdir}/kde4/kspread*module.so
 %attr(755,root,root) %{_libdir}/kde4/kspread_plugin_tool_calendar.so
 %attr(755,root,root) %{_libdir}/kde4/kspreadsolver.so
-%attr(755,root,root) %{_libdir}/kde4/opencalcexport.*
-%attr(755,root,root) %{_libdir}/kde4/opencalcimport.*
-%attr(755,root,root) %{_libdir}/kde4/qproimport.*
+%attr(755,root,root) %{_libdir}/kde4/opencalcexport.so
+%attr(755,root,root) %{_libdir}/kde4/opencalcimport.so
+%attr(755,root,root) %{_libdir}/kde4/qproimport.so
 %attr(755,root,root) %{_libdir}/kde4/spreadsheetshape-deferred.so
-%attr(755,root,root) %{_libdir}/kde4/xlsximport.*
+%attr(755,root,root) %{_libdir}/kde4/xlsximport.so
 %{_desktopdir}/kde4/sheets.desktop
 %{_datadir}/apps/sheets/
 %{_datadir}/config.kcfg/sheets.kcfg
@@ -750,7 +767,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/calligrawords
 %attr(755,root,root) %{_libdir}/libkdeinit4_calligrawords.so
-%attr(755,root,root) %{_libdir}/libwordsprivate.so.*
+%attr(755,root,root) %{_libdir}/libwordsprivate.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libwordsprivate.so.*
 %attr(755,root,root) %{_libdir}/libwordsexportfilters.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libwordsexportfilters.so.?
 %attr(755,root,root) %{_libdir}/kde4/abiwordexport.so

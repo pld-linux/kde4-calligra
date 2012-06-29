@@ -768,7 +768,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/calligrawords
 %attr(755,root,root) %{_libdir}/libkdeinit4_calligrawords.so
 %attr(755,root,root) %{_libdir}/libwordsprivate.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libwordsprivate.so.*
+%attr(755,root,root) %ghost %{_libdir}/libwordsprivate.so.?
 %attr(755,root,root) %{_libdir}/libwordsexportfilters.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libwordsexportfilters.so.?
 %attr(755,root,root) %{_libdir}/kde4/abiwordexport.so

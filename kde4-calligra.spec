@@ -602,6 +602,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/keximigrate_mdb.desktop
 %{_datadir}/kde4/services/keximigrate_txt.desktop
 %{_datadir}/kde4/services/kexidb_sqlite3driver.desktop
+%dir %{_datadir}/kde4/services/kformdesigner
 %{_datadir}/kde4/services/kformdesigner/kformdesigner_containers.desktop
 %{_datadir}/kde4/services/kformdesigner/kformdesigner_kexidbfactory.desktop
 %{_datadir}/kde4/services/kformdesigner/kformdesigner_stdwidgets.desktop

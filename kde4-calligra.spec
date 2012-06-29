@@ -342,6 +342,9 @@ rm -rf $RPM_BUILD_ROOT
 	kde_htmldir=%{_kdedocdir} \
 	kde_libs_htmldir=%{_kdedocdir}
 
+# where they get this size from?
+%{__rm} -r $RPM_BUILD_ROOT%{_iconsdir}/hicolor/45x45
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -380,6 +383,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/calligra
 %attr(755,root,root) %{_bindir}/calligraconverter
 %attr(755,root,root) %{_bindir}/kthesaurus
+%attr(755,root,root) %{_libdir}/libkdeinit4_kthesaurus.so
 %attr(755,root,root) %{_libdir}/libRtfReader.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libRtfReader.so.?
 %attr(755,root,root) %{_libdir}/libchartshapelib.so.*.*.*
@@ -821,8 +825,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%exclude %{_libdir}/libkdeinit4_*.so
 %attr(755,root,root) %{_libdir}/lib*.so
+%exclude %{_libdir}/libkdeinit4_*.so
 %{_includedir}/*.h
 %{_includedir}/KoTextSoftPageBreak.cpp
 %{_includedir}/changetracker

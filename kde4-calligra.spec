@@ -146,6 +146,8 @@ Summary:	Calligra - common files and libraries
 Summary(pl.UTF-8):	Calligra - wspólne pliki i biblioteki
 Group:		X11/Applications
 Requires:	kde4-kdebase-workspace >= %{kdever}
+Requires:	desktop-file-utils
+Requires:	hicolor-icon-theme
 Obsoletes:	kde4-koffice-common
 Obsoletes:	kde4-koffice-kformula
 
@@ -348,35 +350,109 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	common	-p /sbin/ldconfig
-%postun	common	-p /sbin/ldconfig
+%post common
+/sbin/ldconfig
+%update_icon_cache hicolor
+%update_icon_cache oxygen
+%update_desktop_database
 
-%post	karbon	-p /sbin/ldconfig
-%postun	karbon	-p /sbin/ldconfig
+%postun common
+/sbin/ldconfig
+if [ "$1" = 0 ]; then
+	%update_icon_cache hicolor
+	%update_icon_cache oxygen
+	%update_desktop_database
+fi
 
-%post	flow	-p /sbin/ldconfig
-%postun	flow	-p /sbin/ldconfig
+%post karbon
+/sbin/ldconfig
+%update_desktop_database
 
-%post	kexi	-p /sbin/ldconfig
-%postun	kexi	-p /sbin/ldconfig
+%postun karbon
+/sbin/ldconfig
+if [ "$1" = 0 ]; then
+	%update_desktop_database
+fi
 
-%post	plan	-p /sbin/ldconfig
-%postun	plan	-p /sbin/ldconfig
+%post flow
+/sbin/ldconfig
+%update_desktop_database
 
-%post	stage	-p /sbin/ldconfig
-%postun	stage	-p /sbin/ldconfig
+%postun flow
+/sbin/ldconfig
+if [ "$1" = 0 ]; then
+	%update_desktop_database
+fi
 
-%post	krita	-p /sbin/ldconfig
-%postun	krita	-p /sbin/ldconfig
+%post kexi
+/sbin/ldconfig
+%update_desktop_database
 
-%post	sheets	-p /sbin/ldconfig
-%postun	sheets	-p /sbin/ldconfig
+%postun kexi
+/sbin/ldconfig
+if [ "$1" = 0 ]; then
+	%update_desktop_database
+fi
 
-%post	words	-p /sbin/ldconfig
-%postun	words	-p /sbin/ldconfig
+%post plan
+/sbin/ldconfig
+%update_desktop_database
 
-%post	braindump	-p /sbin/ldconfig
-%postun braindump	-p /sbin/ldconfig
+%postun plan
+/sbin/ldconfig
+if [ "$1" = 0 ]; then
+	%update_desktop_database
+fi
+
+%post stage
+/sbin/ldconfig
+%update_desktop_database
+
+%postun stage
+/sbin/ldconfig
+if [ "$1" = 0 ]; then
+	%update_desktop_database
+fi
+
+%post krita
+/sbin/ldconfig
+%update_desktop_database
+
+%postun krita
+/sbin/ldconfig
+if [ "$1" = 0 ]; then
+	%update_desktop_database
+fi
+
+%post sheets
+/sbin/ldconfig
+%update_desktop_database
+
+%postun sheets
+/sbin/ldconfig
+if [ "$1" = 0 ]; then
+	%update_desktop_database
+fi
+
+%post words
+/sbin/ldconfig
+%update_desktop_database
+
+%postun words
+/sbin/ldconfig
+if [ "$1" = 0 ]; then
+	%update_desktop_database
+fi
+
+%post braindump
+/sbin/ldconfig
+%update_desktop_database
+
+%postun braindump
+/sbin/ldconfig
+if [ "$1" = 0 ]; then
+	%update_desktop_database
+fi
 
 %files common
 %defattr(644,root,root,755)

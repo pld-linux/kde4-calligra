@@ -31,7 +31,7 @@ Summary:	Calligra - powerful office suite for KDE
 Summary(pl.UTF-8):	Calligra - potężny pakiet biurowy dla KDE
 Name:		kde4-calligra
 Version:	2.5.0
-Release:	0.1
+Release:	1
 License:	GPL/LGPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{orgname}-%{version}/%{orgname}-%{version}.tar.bz2
@@ -458,62 +458,58 @@ fi
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/calligra
 %attr(755,root,root) %{_bindir}/calligraconverter
-%attr(755,root,root) %{_bindir}/kthesaurus
-%attr(755,root,root) %{_libdir}/libkdeinit4_kthesaurus.so
 %attr(755,root,root) %{_libdir}/libRtfReader.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libRtfReader.so.?
+%attr(755,root,root) %ghost %{_libdir}/libRtfReader.so.10
 %attr(755,root,root) %{_libdir}/libchartshapelib.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libchartshapelib.so.?
+%attr(755,root,root) %ghost %{_libdir}/libchartshapelib.so.10
 %attr(755,root,root) %{_libdir}/libflake.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libflake.so.?
+%attr(755,root,root) %ghost %{_libdir}/libflake.so.10
 %attr(755,root,root) %{_libdir}/libkformulalib.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libkformulalib.so.?
+%attr(755,root,root) %ghost %{_libdir}/libkformulalib.so.10
 %attr(755,root,root) %{_libdir}/libkdchart.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libkdchart.so.?
+%attr(755,root,root) %ghost %{_libdir}/libkdchart.so.10
 %attr(755,root,root) %{_libdir}/libkochart.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libkochart.so.?
+%attr(755,root,root) %ghost %{_libdir}/libkochart.so.10
 %attr(755,root,root) %{_libdir}/libkokross.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libkokross.so.?
+%attr(755,root,root) %ghost %{_libdir}/libkokross.so.10
 %attr(755,root,root) %{_libdir}/libkomain.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libkomain.so.?
+%attr(755,root,root) %ghost %{_libdir}/libkomain.so.10
 %attr(755,root,root) %{_libdir}/libkoodf.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libkoodf.so.?
+%attr(755,root,root) %ghost %{_libdir}/libkoodf.so.10
 %attr(755,root,root) %{_libdir}/libkopageapp.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libkopageapp.so.?
+%attr(755,root,root) %ghost %{_libdir}/libkopageapp.so.10
 %attr(755,root,root) %{_libdir}/libkoplugin.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libkoplugin.so.?
+%attr(755,root,root) %ghost %{_libdir}/libkoplugin.so.10
 %attr(755,root,root) %{_libdir}/libkoproperty.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libkoproperty.so.?
+%attr(755,root,root) %ghost %{_libdir}/libkoproperty.so.10
 %attr(755,root,root) %{_libdir}/libkoreport.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libkoreport.so.?
+%attr(755,root,root) %ghost %{_libdir}/libkoreport.so.10
 %attr(755,root,root) %{_libdir}/libkotext.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libkotext.so.?
+%attr(755,root,root) %ghost %{_libdir}/libkotext.so.10
 %attr(755,root,root) %{_libdir}/libkowidgets.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libkowidgets.so.?
+%attr(755,root,root) %ghost %{_libdir}/libkowidgets.so.10
 %attr(755,root,root) %{_libdir}/libkowv2.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libkowv2.so.?
+%attr(755,root,root) %ghost %{_libdir}/libkowv2.so.9
 %attr(755,root,root) %{_libdir}/libkundo2.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libkundo2.so.?
+%attr(755,root,root) %ghost %{_libdir}/libkundo2.so.10
 %attr(755,root,root) %{_libdir}/liblibwmf.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/liblibwmf.so.?
+%attr(755,root,root) %ghost %{_libdir}/liblibwmf.so.10
 %attr(755,root,root) %{_libdir}/libmsooxml.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libmsooxml.so.?
+%attr(755,root,root) %ghost %{_libdir}/libmsooxml.so.10
 %attr(755,root,root) %{_libdir}/libpigmentcms.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libpigmentcms.so.?
+%attr(755,root,root) %ghost %{_libdir}/libpigmentcms.so.10
 %attr(755,root,root) %{_libdir}/libtextlayout.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libtextlayout.so.?
+%attr(755,root,root) %ghost %{_libdir}/libtextlayout.so.10
 %attr(755,root,root) %{_libdir}/kde4/artistictextshape.so
 %attr(755,root,root) %{_libdir}/kde4/autocorrect.so
 %attr(755,root,root) %{_libdir}/kde4/calligradockers.so
 %attr(755,root,root) %{_libdir}/kde4/calligragoogledocs.so
-%attr(755,root,root) %{_libdir}/kde4/calligrascan.so
 %attr(755,root,root) %{_libdir}/kde4/calligrathumbnail.so
 %attr(755,root,root) %{_libdir}/kde4/changecase.so
 %attr(755,root,root) %{_libdir}/kde4/chartshape.so
 %attr(755,root,root) %{_libdir}/kde4/commentshape.so
 %attr(755,root,root) %{_libdir}/kde4/defaulttools.so
 %attr(755,root,root) %{_libdir}/kde4/formulashape.so
-%attr(755,root,root) %{_libdir}/kde4/generickofilter.so
 %attr(755,root,root) %{_libdir}/kde4/kodocinfopropspage.so
 %attr(755,root,root) %{_libdir}/kde4/kolcmsengine.so
 %attr(755,root,root) %{_libdir}/kde4/kopabackgroundtool.so
@@ -521,27 +517,21 @@ fi
 %attr(755,root,root) %{_libdir}/kde4/koreport_chartplugin.so
 %attr(755,root,root) %{_libdir}/kde4/koreport_mapsplugin.so
 %attr(755,root,root) %{_libdir}/kde4/koreport_webplugin.so
-%attr(755,root,root) %{_libdir}/kde4/kounavailpart.so
 %attr(755,root,root) %{_libdir}/kde4/musicshape.so
 %attr(755,root,root) %{_libdir}/kde4/okularGenerator_odp.so
 %attr(755,root,root) %{_libdir}/kde4/pathshapes.so
 %attr(755,root,root) %{_libdir}/kde4/pictureshape.so
 %attr(755,root,root) %{_libdir}/kde4/pluginshape.so
-#%attr(755,root,root) %{_libdir}/kde4/spacenavigator.so
 %attr(755,root,root) %{_libdir}/kde4/spellcheck.so
 %attr(755,root,root) %{_libdir}/kde4/spreadsheetshape.so
 %attr(755,root,root) %{_libdir}/kde4/textshape.so
 %attr(755,root,root) %{_libdir}/kde4/textvariables.so
-%attr(755,root,root) %{_libdir}/kde4/treeshape.so
 %attr(755,root,root) %{_libdir}/kde4/thesaurustool.so
 %attr(755,root,root) %{_libdir}/kde4/vectorshape.so
 %attr(755,root,root) %{_libdir}/kde4/videoshape.so
 %attr(755,root,root) %{_libdir}/kde4/webshape.so
-%attr(755,root,root) %{_libdir}/kde4/xsltexport.so
-%attr(755,root,root) %{_libdir}/kde4/xsltimport.so
 %{_desktopdir}/kde4/calligra.desktop
 %{_desktopdir}/kde4/okularApplication_odp.desktop
-%{_desktopdir}/kde4/KThesaurus.desktop
 %{_datadir}/kde4/services/artistictextshape.desktop
 %{_datadir}/kde4/services/autocorrect.desktop
 %{_datadir}/kde4/services/calligradockers.desktop
@@ -553,7 +543,6 @@ fi
 %{_datadir}/kde4/services/commentshape.desktop
 %{_datadir}/kde4/services/defaulttools.desktop
 %{_datadir}/kde4/services/formulashape.desktop
-%{_datadir}/kde4/services/generic_filter.desktop
 %{_datadir}/kde4/services/kchartpart.desktop
 %{_datadir}/kde4/services/kexirelationdesignshape.desktop
 %{_datadir}/kde4/services/kformulapart.desktop
@@ -564,27 +553,21 @@ fi
 %{_datadir}/kde4/services/koreport_chartplugin.desktop
 %{_datadir}/kde4/services/koreport_mapsplugin.desktop
 %{_datadir}/kde4/services/koreport_webplugin.desktop
-%{_datadir}/kde4/services/kounavail.desktop
 %{_datadir}/kde4/services/libokularGenerator_odp.desktop
 %{_datadir}/kde4/services/musicshape.desktop
 %{_datadir}/kde4/services/okularOdp.desktop
 %{_datadir}/kde4/services/pathshapes.desktop
 %{_datadir}/kde4/services/pictureshape.desktop
 %{_datadir}/kde4/services/pluginshape.desktop
-#%{_datadir}/kde4/services/spacenavigator.desktop
 %{_datadir}/kde4/services/spellcheck.desktop
 %{_datadir}/kde4/services/spreadsheetshape-deferred.desktop
 %{_datadir}/kde4/services/spreadsheetshape.desktop
 %{_datadir}/kde4/services/textshape.desktop
 %{_datadir}/kde4/services/textvariables.desktop
 %{_datadir}/kde4/services/thesaurustool.desktop
-%{_datadir}/kde4/services/treeshape.desktop
 %{_datadir}/kde4/services/vectorshape.desktop
 %{_datadir}/kde4/services/videoshape.desktop
 %{_datadir}/kde4/services/webshape.desktop
-%{_datadir}/kde4/services/xslt_export.desktop
-%{_datadir}/kde4/services/xslt_import.desktop
-%{_datadir}/kde4/services/ServiceMenus/kchart_konqi.desktop
 %{_datadir}/kde4/servicetypes/calligra_application.desktop
 %{_datadir}/kde4/servicetypes/calligra_deferred_plugin.desktop
 %{_datadir}/kde4/servicetypes/calligradocker.desktop
@@ -604,13 +587,11 @@ fi
 %{_datadir}/apps/formulashape
 %{_datadir}/apps/koproperty
 %{_datadir}/apps/musicshape
-%{_datadir}/apps/xsltfilter
 %{_datadir}/mime/packages/msooxml-all.xml
 %{_datadir}/color/icc/pigment
 %{_iconsdir}/hicolor/*/*/*
 %{_iconsdir}/oxygen/*/*/*
 %{_kdedocdir}/en/calligra
-%{_kdedocdir}/en/thesaurus
 %dir %{_datadir}/templates/.source
 
 %files karbon
@@ -618,9 +599,9 @@ fi
 %attr(755,root,root) %{_bindir}/karbon
 %attr(755,root,root) %{_libdir}/libkdeinit4_karbon.so
 %attr(755,root,root) %{_libdir}/libkarboncommon.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libkarboncommon.so.?
+%attr(755,root,root) %ghost %{_libdir}/libkarboncommon.so.10
 %attr(755,root,root) %{_libdir}/libkarbonui.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libkarbonui.so.?
+%attr(755,root,root) %ghost %{_libdir}/libkarbonui.so.10
 %attr(755,root,root) %{_libdir}/kde4/*karbon*.*
 %attr(755,root,root) %{_libdir}/kde4/wmfexport.*
 %attr(755,root,root) %{_libdir}/kde4/wmfimport.*
@@ -640,8 +621,9 @@ fi
 %attr(755,root,root) %{_bindir}/calligraflow
 %attr(755,root,root) %{_libdir}/libkdeinit4_calligraflow.so
 %attr(755,root,root) %{_libdir}/libflowprivate.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libflowprivate.so.?
+%attr(755,root,root) %ghost %{_libdir}/libflowprivate.so.10
 %attr(755,root,root) %{_libdir}/kde4/*flow*.*
+%attr(755,root,root) %{_libdir}/kde4/vsdximport.so
 %{_desktopdir}/kde4/flow.desktop
 %{_datadir}/apps/flow
 %{_datadir}/config/flowrc
@@ -656,9 +638,9 @@ fi
 %doc kexi/CHANGES kexi/README
 %attr(755,root,root) %{_bindir}/kexi*
 %attr(755,root,root) %{_libdir}/libkexi*.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libkexi*.so.?
+%attr(755,root,root) %ghost %{_libdir}/libkexi*.so.10
 %attr(755,root,root) %{_libdir}/libkformdesigner.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libkformdesigner.so.?
+%attr(755,root,root) %ghost %{_libdir}/libkformdesigner.so.10
 %attr(755,root,root) %{_libdir}/kde4/kexidb_sqlite3driver.so
 %attr(755,root,root) %{_libdir}/kde4/kexidb_sqlite3_icu.so
 %attr(755,root,root) %{_libdir}/kde4/kexihandler_*.*
@@ -721,19 +703,19 @@ fi
 %attr(755,root,root) %{_libdir}/libkdeinit4_calligraplan.so
 %attr(755,root,root) %{_libdir}/libkdeinit4_calligraplanwork.so
 %attr(755,root,root) %{_libdir}/libkplatokernel.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libkplatokernel.so.?
+%attr(755,root,root) %ghost %{_libdir}/libkplatokernel.so.10
 %attr(755,root,root) %{_libdir}/libkplatomodels.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libkplatomodels.so.?
+%attr(755,root,root) %ghost %{_libdir}/libkplatomodels.so.10
 %attr(755,root,root) %{_libdir}/libkplatoui.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libkplatoui.so.?
+%attr(755,root,root) %ghost %{_libdir}/libkplatoui.so.10
 %attr(755,root,root) %{_libdir}/libplanprivate.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libplanprivate.so.?
+%attr(755,root,root) %ghost %{_libdir}/libplanprivate.so.10
 %attr(755,root,root) %{_libdir}/libplanworkapp.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libplanworkapp.so.?
+%attr(755,root,root) %ghost %{_libdir}/libplanworkapp.so.10
 %attr(755,root,root) %{_libdir}/libplanworkfactory.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libplanworkfactory.so.?
+%attr(755,root,root) %ghost %{_libdir}/libplanworkfactory.so.10
 %attr(755,root,root) %{_libdir}/librcps_plan.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/librcps_plan.so.?
+%attr(755,root,root) %ghost %{_libdir}/librcps_plan.so.10
 %attr(755,root,root) %{_libdir}/kde4/kplatorcpsscheduler.so
 %attr(755,root,root) %{_libdir}/kde4/krossmoduleplan.so
 %attr(755,root,root) %{_libdir}/kde4/planicalexport.so
@@ -759,7 +741,7 @@ fi
 %attr(755,root,root) %{_bindir}/calligrastage
 %attr(755,root,root) %{_libdir}/libkdeinit4_calligrastage.so
 %attr(755,root,root) %{_libdir}/libcalligrastageprivate.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libcalligrastageprivate.so.?
+%attr(755,root,root) %ghost %{_libdir}/libcalligrastageprivate.so.10
 %attr(755,root,root) %{_libdir}/kde4/Filterkpr2odf.so
 %attr(755,root,root) %{_libdir}/kde4/kpr_pageeffect_*.so
 %attr(755,root,root) %{_libdir}/kde4/kpr_shapeanimation_*.so
@@ -787,9 +769,10 @@ fi
 %attr(755,root,root) %{_bindir}/krita
 %attr(755,root,root) %{_libdir}/libkdeinit4_krita.so
 %attr(755,root,root) %{_libdir}/libkrita*.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libkrita*.so.?
+%attr(755,root,root) %ghost %{_libdir}/libkrita*.so.10
 %attr(755,root,root) %{_libdir}/kde4/*krita*.so
 %{_desktopdir}/kde4/*krita*.desktop
+%{_datadir}/apps/color-schemes/Krita*.colors
 %{_datadir}/apps/krita
 %{_datadir}/apps/kritaplugins
 %{_datadir}/color/icc/krita
@@ -805,9 +788,9 @@ fi
 %attr(755,root,root) %{_bindir}/calligrasheets
 %attr(755,root,root) %{_libdir}/libkdeinit4_calligrasheets.so
 %attr(755,root,root) %{_libdir}/libcalligrasheetscommon.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libcalligrasheetscommon.so.?
+%attr(755,root,root) %ghost %{_libdir}/libcalligrasheetscommon.so.10
 %attr(755,root,root) %{_libdir}/libcalligrasheetsodf.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libcalligrasheetsodf.so.?
+%attr(755,root,root) %ghost %{_libdir}/libcalligrasheetsodf.so.10
 %attr(755,root,root) %{_libdir}/kde4/applixspreadimport.so
 %attr(755,root,root) %{_libdir}/kde4/calligrasheets*.so
 %attr(755,root,root) %{_libdir}/kde4/csvexport.so
@@ -849,40 +832,21 @@ fi
 %attr(755,root,root) %{_bindir}/calligrawords
 %attr(755,root,root) %{_libdir}/libkdeinit4_calligrawords.so
 %attr(755,root,root) %{_libdir}/libwordsprivate.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libwordsprivate.so.?
-%attr(755,root,root) %{_libdir}/libwordsexportfilters.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libwordsexportfilters.so.?
-%attr(755,root,root) %{_libdir}/kde4/abiwordexport.so
-%attr(755,root,root) %{_libdir}/kde4/abiwordimport.so
-%attr(755,root,root) %{_libdir}/kde4/amiproexport.so
-%attr(755,root,root) %{_libdir}/kde4/amiproimport.so
+%attr(755,root,root) %ghost %{_libdir}/libwordsprivate.so.10
 %attr(755,root,root) %{_libdir}/kde4/applixwordimport.so
-%attr(755,root,root) %{_libdir}/kde4/asciiexport.so
 %attr(755,root,root) %{_libdir}/kde4/asciiimport.so
-%attr(755,root,root) %{_libdir}/kde4/docbookexport.so
 %attr(755,root,root) %{_libdir}/kde4/docximport.so
-%attr(755,root,root) %{_libdir}/kde4/hancomwordimport.so
 %attr(755,root,root) %{_libdir}/kde4/htmlodf_export.so
-%attr(755,root,root) %{_libdir}/kde4/kwordkword1dot3import.so
 %attr(755,root,root) %{_libdir}/kde4/mswordodf_import.so
-%attr(755,root,root) %{_libdir}/kde4/oowriterexport.so
-%attr(755,root,root) %{_libdir}/kde4/oowriterimport.so
-%attr(755,root,root) %{_libdir}/kde4/palmdocexport.so
-%attr(755,root,root) %{_libdir}/kde4/palmdocimport.so
-%attr(755,root,root) %{_libdir}/kde4/rtfexport.so
 %attr(755,root,root) %{_libdir}/kde4/rtfimport.so
 %attr(755,root,root) %{_libdir}/kde4/wordspart.so
-%attr(755,root,root) %{_libdir}/kde4/wpexport.so
 %attr(755,root,root) %{_libdir}/kde4/wpgimport.so
-%attr(755,root,root) %{_libdir}/kde4/wpimport.so
-%attr(755,root,root) %{_libdir}/kde4/wmlexport.so
-%attr(755,root,root) %{_libdir}/kde4/wmlimport.so
+%attr(755,root,root) %{_libdir}/kde4/wpsimport.so
 %{_desktopdir}/kde4/words.desktop
 %{_datadir}/apps/words
 %{_datadir}/config/wordsrc
 %{_datadir}/kde4/services/html-odf_export.desktop
 %{_datadir}/kde4/services/ServiceMenus/words_konqi.desktop
-%{_datadir}/kde4/services/words_*_export.desktop
 %{_datadir}/kde4/services/words_*_import.desktop
 %{_datadir}/kde4/services/wordspart.desktop
 %{_datadir}/templates/.source/TextDocument.*
@@ -892,7 +856,7 @@ fi
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/braindump
 %attr(755,root,root) %{_libdir}/libbraindumpcore.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libbraindumpcore.so.?
+%attr(755,root,root) %ghost %{_libdir}/libbraindumpcore.so.10
 %attr(755,root,root) %{_libdir}/kde4/stateshape.so
 %{_desktopdir}/kde4/braindump.desktop
 %{_datadir}/apps/braindump

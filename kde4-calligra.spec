@@ -821,7 +821,6 @@ fi
 %{_datadir}/kde4/services/kspread_plugin_tool_calendar.desktop
 %{_datadir}/kde4/services/ServiceMenus/kspread_konqi.desktop
 %{_datadir}/kde4/services/sheetspart.desktop
-%{_datadir}/kde4/services/spreadsheetshape-deferred.desktop
 %{_datadir}/kde4/servicetypes/sheets_plugin.desktop
 %{_datadir}/templates/.source/SpreadSheet.*
 %{_datadir}/templates/SpreadSheet.desktop

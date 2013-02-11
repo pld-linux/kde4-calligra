@@ -332,6 +332,7 @@ cd build
 	-DBUILD_active:BOOL=OFF \
 	-DBUILD_koabstraction:BOOL=OFF \
 	-DBUILD_mobile:BOOL=OFF \
+	-DKDE4_BUILD_TESTS:BOOL=OFF \
 	../
 
 %{__make}

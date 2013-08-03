@@ -21,18 +21,18 @@
 
 %define		_state		stable
 %define		orgname		calligra
-%define		kdever		4.9.0
+%define		kdever		4.10.0
 %define		qtver		4.8.2
 
 Summary:	Calligra - powerful office suite for KDE
 Summary(pl.UTF-8):	Calligra - potężny pakiet biurowy dla KDE
 Name:		kde4-calligra
-Version:	2.6.3
-Release:	3
+Version:	2.7.1
+Release:	1
 License:	GPL/LGPL
 Group:		X11/Applications
-Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{orgname}-%{version}/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	90d6bb619191abbcc94094379d47e225
+Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{orgname}-%{version}/%{orgname}-%{version}.tar.xz
+# Source0-md5:	9cf909ddf57ecb16d4370cc1062d0f7f
 URL:		http://www.calligra-suite.org/
 BuildRequires:	GraphicsMagick-devel
 BuildRequires:	OpenEXR-devel
@@ -331,10 +331,14 @@ Group:		X11/Applications
 Requires:	%{name}-common = %{version}-%{release}
 
 %description author
-Author is a writing tool aimed at professional authors and is designed to support the process of creating a new book from conception through to its final publication.
+Author is a writing tool aimed at professional authors and is designed
+to support the process of creating a new book from conception through
+to its final publication.
 
 %description author -l pl.UTF-8
-Author jest narzędziem dla profesjonalnych autorów i jest zaprojektowany by wspierać proces tworzenia książek od koncepcji po finalną publikację.
+Author jest narzędziem dla profesjonalnych autorów i jest
+zaprojektowany by wspierać proces tworzenia książek od koncepcji po
+finalną publikację.
 
 %prep
 %setup -q -n %{orgname}-%{version}

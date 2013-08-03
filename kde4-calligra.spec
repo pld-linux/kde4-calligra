@@ -28,7 +28,7 @@ Summary:	Calligra - powerful office suite for KDE
 Summary(pl.UTF-8):	Calligra - potężny pakiet biurowy dla KDE
 Name:		kde4-calligra
 Version:	2.7.1
-Release:	0.1
+Release:	1
 License:	GPL/LGPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{orgname}-%{version}/%{orgname}-%{version}.tar.xz
@@ -488,6 +488,8 @@ fi
 %attr(755,root,root) %{_bindir}/calligraconverter
 %attr(755,root,root) %{_libdir}/libRtfReader.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libRtfReader.so.12
+%attr(755,root,root) %{_libdir}/libbasicflakes.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libbasicflakes.so.12
 %attr(755,root,root) %{_libdir}/libcalligradb.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libcalligradb.so.12
 %attr(755,root,root) %{_libdir}/libchartshapelib.so.*.*.*
@@ -506,6 +508,8 @@ fi
 %attr(755,root,root) %ghost %{_libdir}/libkomain.so.12
 %attr(755,root,root) %{_libdir}/libkoodf.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libkoodf.so.12
+%attr(755,root,root) %{_libdir}/libodftraverse.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libodftraverse.so.12
 %attr(755,root,root) %{_libdir}/libkopageapp.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libkopageapp.so.12
 %attr(755,root,root) %{_libdir}/libkoplugin.so.*.*.*
@@ -518,6 +522,8 @@ fi
 %attr(755,root,root) %ghost %{_libdir}/libkotext.so.12
 %attr(755,root,root) %{_libdir}/libkowidgets.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libkowidgets.so.12
+%attr(755,root,root) %{_libdir}/libkowidgetutils.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libkowidgetutils.so.12
 %attr(755,root,root) %{_libdir}/libkowv2.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libkowv2.so.9
 %attr(755,root,root) %{_libdir}/libkundo2.so.*.*.*
@@ -532,6 +538,8 @@ fi
 %attr(755,root,root) %ghost %{_libdir}/libtextlayout.so.12
 %attr(755,root,root) %{_libdir}/kde4/artistictextshape.so
 %attr(755,root,root) %{_libdir}/kde4/autocorrect.so
+%attr(755,root,root) %{_libdir}/kde4/basicflakesplugin.so
+%attr(755,root,root) %{_libdir}/kde4/calligradocinfopropspage.so
 %attr(755,root,root) %{_libdir}/kde4/calligradockers.so
 %attr(755,root,root) %{_libdir}/kde4/calligragoogledocs.so
 %attr(755,root,root) %{_libdir}/kde4/calligrathumbnail.so
@@ -564,6 +572,8 @@ fi
 %{_desktopdir}/kde4/okularApplication_odp.desktop
 %{_datadir}/kde4/services/artistictextshape.desktop
 %{_datadir}/kde4/services/autocorrect.desktop
+%{_datadir}/kde4/services/basicflakesplugin.desktop
+%{_datadir}/kde4/services/calligradocinfopropspage.desktop
 %{_datadir}/kde4/services/calligradockers.desktop
 %{_datadir}/kde4/services/calligrastageeventactions.desktop
 %{_datadir}/kde4/services/calligrastagetoolanimation.desktop
@@ -596,6 +606,8 @@ fi
 %{_datadir}/kde4/services/webshape.desktop
 %{_datadir}/kde4/servicetypes/calligra_application.desktop
 %{_datadir}/kde4/servicetypes/calligra_deferred_plugin.desktop
+%{_datadir}/kde4/servicetypes/calligra_filter.desktop
+%{_datadir}/kde4/servicetypes/calligra_part.desktop
 %{_datadir}/kde4/servicetypes/calligradb_driver.desktop
 %{_datadir}/kde4/servicetypes/calligradocker.desktop
 %{_datadir}/kde4/servicetypes/filtereffect.desktop
@@ -761,6 +773,7 @@ fi
 %{_datadir}/kde4/services/spacenavigator.desktop
 %{_datadir}/kde4/services/threedshape.desktop
 %{_datadir}/kde4/servicetypes/plan_schedulerplugin.desktop
+%{_datadir}/mime/packages/calligra_planner_mpp.xml
 
 %files stage
 %defattr(644,root,root,755)
@@ -807,6 +820,7 @@ fi
 %{_datadir}/kde4/services/krita*.desktop
 %{_datadir}/kde4/services/ServiceMenus/krita_print.desktop
 %{_datadir}/kde4/servicetypes/krita*.desktop
+%{_datadir}/mime/packages/krita.xml
 %{_datadir}/mime/packages/krita_ora.xml
 
 %files sheets
@@ -830,6 +844,7 @@ fi
 %attr(755,root,root) %{_libdir}/kde4/kspread*import.so
 %attr(755,root,root) %{_libdir}/kde4/kspread*module.so
 %attr(755,root,root) %{_libdir}/kde4/kspread_plugin_tool_calendar.so
+%attr(755,root,root) %{_libdir}/kde4/sheetspivottables.so
 %attr(755,root,root) %{_libdir}/kde4/sheetssolver.so
 %attr(755,root,root) %{_libdir}/kde4/opencalcexport.so
 %attr(755,root,root) %{_libdir}/kde4/opencalcimport.so
@@ -857,9 +872,12 @@ fi
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/calligrawords
 %attr(755,root,root) %{_libdir}/libkdeinit4_calligrawords.so
+%attr(755,root,root) %{_libdir}/libkordf.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libkordf.so.12
 %attr(755,root,root) %{_libdir}/libwordsprivate.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libwordsprivate.so.12
 %attr(755,root,root) %{_libdir}/kde4/applixwordimport.so
+%attr(755,root,root) %{_libdir}/kde4/asciiexport.so
 %attr(755,root,root) %{_libdir}/kde4/asciiimport.so
 %attr(755,root,root) %{_libdir}/kde4/docximport.so
 %attr(755,root,root) %{_libdir}/kde4/exportMobi.so
@@ -875,6 +893,7 @@ fi
 %{_datadir}/apps/words
 %{_datadir}/config/wordsrc
 %{_datadir}/kde4/services/ServiceMenus/words_print.desktop
+%{_datadir}/kde4/services/textdocumentinspection.desktop
 %{_datadir}/kde4/services/words_*_import.desktop
 %{_datadir}/kde4/services/words_*_export.desktop
 %{_datadir}/kde4/services/words_*_thumbnail.desktop

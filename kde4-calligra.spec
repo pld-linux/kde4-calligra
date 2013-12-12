@@ -23,6 +23,7 @@
 %define		orgname		calligra
 %define		kdever		4.10.0
 %define		qtver		4.8.2
+%define		kdeworkspacever	4.11.0
 
 Summary:	Calligra - powerful office suite for KDE
 Summary(pl.UTF-8):	Calligra - potężny pakiet biurowy dla KDE
@@ -146,7 +147,7 @@ programów używających bibliotek Calligra.
 Summary:	Calligra - common files and libraries
 Summary(pl.UTF-8):	Calligra - wspólne pliki i biblioteki
 Group:		X11/Applications
-Requires:	kde4-kdebase-workspace >= %{kdever}
+Requires:	kde4-kdebase-workspace >= %{kdeworkspacever}
 Requires:	desktop-file-utils
 Requires:	hicolor-icon-theme
 Obsoletes:	kde4-koffice-common

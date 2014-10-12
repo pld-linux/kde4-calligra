@@ -929,11 +929,8 @@ fi
 %attr(755,root,root) %{_libdir}/lib*.so
 %exclude %{_libdir}/libkdeinit4_*.so
 %{_includedir}/*.h
-%{_includedir}/KoTextSoftPageBreak.cpp
-%{_includedir}/changetracker
 %{_includedir}/kexi
 %{_includedir}/sheets
 %{_includedir}/stage
-%{_includedir}/styles
 %{_includedir}/words
 %{_datadir}/apps/cmake/modules/FindCalligraLibs.cmake

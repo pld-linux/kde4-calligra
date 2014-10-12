@@ -57,6 +57,7 @@ BuildRequires:	giflib-devel
 BuildRequires:	glew-devel
 BuildRequires:	gmm-devel
 BuildRequires:	gsl-devel
+BuildRequires:	kde4-kactivities-devel >= %{kdever}
 BuildRequires:	kde4-kdelibs-devel >= %{kdever}
 BuildRequires:	kde4-kdepimlibs-devel >= %{kdever}
 BuildRequires:	kde4-libkdcraw-devel >= %{kdever}
@@ -66,21 +67,24 @@ BuildRequires:	kde4-libksane-devel >= %{kdever}
 BuildRequires:	kde4-marble-devel >= %{kdever}
 BuildRequires:	kde4-okular-devel >= %{kdever}
 BuildRequires:	lcms2-devel
+BuildRequires:	libetonyek-devel
 BuildRequires:	libexif-devel >= 0.6.12
 BuildRequires:	libicu-devel
 BuildRequires:	libjpeg-devel
+BuildRequires:	libodfgen-devel
 BuildRequires:	libpng-devel
 %{?with_pqxx:BuildRequires:	libpqxx-devel >= 3.0.0}
 BuildRequires:	libspnav-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	libtiff-devel
+BuildRequires:	libvisio-devel
 BuildRequires:	libwpd-devel >= 0.9
 BuildRequires:	libwpg-devel >= 0.2
 BuildRequires:	libwps-devel
 BuildRequires:	libxml2-devel >= 0:2.4.8
 BuildRequires:	libxslt-devel >= 1.0.7
 BuildRequires:	mysql-devel
-BuildRequires:	openjpeg-devel >= 1.3
+BuildRequires:	openjpeg2-devel >= 1.3
 BuildRequires:	openssl-devel
 BuildRequires:	pkgconfig
 %{?with_pdf:BuildRequires:	poppler-Qt-devel >= 0.6}
@@ -97,6 +101,7 @@ BuildRequires:	soprano-devel
 BuildRequires:	sqlite3-devel >= 3.7.13-2
 BuildRequires:	xbase-devel
 BuildRequires:	zlib-devel
+BuildRequires:	docbook-style-xsl
 Obsoletes:	kde4-koffice
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 

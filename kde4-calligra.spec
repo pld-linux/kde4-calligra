@@ -743,7 +743,6 @@ fi
 %{_datadir}/apps/kritasketch
 %{_datadir}/apps/kritaplugins
 %{_datadir}/color/icc/krita
-%{_datadir}/config/krita*.knsrc
 %{_datadir}/config/krita*rc
 %{_datadir}/kde4/services/krita*.desktop
 %{_datadir}/kde4/services/ServiceMenus/krita_print.desktop

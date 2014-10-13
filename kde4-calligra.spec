@@ -539,6 +539,9 @@ fi
 %attr(755,root,root) %{_libdir}/kde4/koreport_mapsplugin.so
 %attr(755,root,root) %{_libdir}/kde4/koreport_webplugin.so
 %attr(755,root,root) %{_libdir}/kde4/okularGenerator_odp.so
+%dir %{_libdir}/calligra
+%dir %{_libdir}/calligra/imports
+%dir %{_libdir}/calligra/imports/org
 %{_desktopdir}/kde4/calligra.desktop
 %{_desktopdir}/kde4/okularApplication_odp.desktop
 %{_datadir}/kde4/services/calligradocinfopropspage.desktop
@@ -725,17 +728,23 @@ fi
 %defattr(644,root,root,755)
 %doc krita/AUTHORS krita/ChangeLog krita/README
 %attr(755,root,root) %{_bindir}/krita
+%attr(755,root,root) %{_bindir}/kritagemini
+%attr(755,root,root) %{_bindir}/kritasketch
 %attr(755,root,root) %{_libdir}/libkdeinit4_krita.so
 %attr(755,root,root) %{_libdir}/libkrita*.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libkrita*.so.13
 %attr(755,root,root) %{_libdir}/kde4/*krita*.so
+%{_libdir}/calligra/imports/org/krita
 %{_desktopdir}/kde4/*krita*.desktop
+%{_datadir}/appdata/krita.appdata.xml
 %{_datadir}/apps/color-schemes/Krita*.colors
 %{_datadir}/apps/krita
+%{_datadir}/apps/kritagemini
+%{_datadir}/apps/kritasketch
 %{_datadir}/apps/kritaplugins
 %{_datadir}/color/icc/krita
 %{_datadir}/config/krita*.knsrc
-%{_datadir}/config/kritarc
+%{_datadir}/config/krita*rc
 %{_datadir}/kde4/services/krita*.desktop
 %{_datadir}/kde4/services/ServiceMenus/krita_print.desktop
 %{_datadir}/kde4/servicetypes/krita*.desktop
@@ -804,6 +813,8 @@ fi
 %attr(755,root,root) %{_bindir}/braindump
 %attr(755,root,root) %{_libdir}/libbraindumpcore.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libbraindumpcore.so.13
+%attr(755,root,root) %{_libdir}/kde4/braindump_shape_state.so
+%attr(755,root,root) %{_libdir}/kde4/braindump_shape_web.so
 %{_desktopdir}/kde4/braindump.desktop
 %{_datadir}/apps/braindump
 %{_datadir}/apps/stateshape
@@ -814,7 +825,9 @@ fi
 %attr(755,root,root) %{_libdir}/lib*.so
 %exclude %{_libdir}/libkdeinit4_*.so
 %{_includedir}/*.h
+%{_includedir}/calligra
 %{_includedir}/kexi
+%{_includedir}/krita
 %{_includedir}/sheets
 %{_includedir}/stage
 %{_includedir}/words

@@ -530,9 +530,47 @@ fi
 %attr(755,root,root) %ghost %{_libdir}/libkundo2.so.13
 %attr(755,root,root) %{_libdir}/libpigmentcms.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libpigmentcms.so.13
+%attr(755,root,root) %{_libdir}/libkformula.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libkformula.so.13
+%attr(755,root,root) %{_libdir}/libkomsooxml.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libkomsooxml.so.13
+%attr(755,root,root) %{_libdir}/libkoodf2.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libkoodf2.so.13
+%attr(755,root,root) %{_libdir}/libkoodfreader.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libkoodfreader.so.13
+%attr(755,root,root) %{_libdir}/libkotextlayout.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libkotextlayout.so.13
+%attr(755,root,root) %{_libdir}/libkovectorimage.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libkovectorimage.so.13
+%attr(755,root,root) %{_libdir}/kde4/calligra_device_spacenavigator.so
 %attr(755,root,root) %{_libdir}/kde4/calligradocinfopropspage.so
-%attr(755,root,root) %{_libdir}/kde4/calligrathumbnail.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_docker_defaults.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_pdf2svg.so
 %attr(755,root,root) %{_libdir}/kde4/calligraimagethumbnail.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_semanticitem_contact.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_semanticitem_event.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_semanticitem_location.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_shape_artistictext.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_shape_chart.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_shape_formular.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_shape_music.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_shape_paths.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_shape_picture.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_shape_plugin.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_shape_spreadsheet-deferred.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_shape_spreadsheet.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_shape_text.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_shape_threed.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_shape_vector.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_shape_video.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_textediting_autocorrect.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_textediting_changecase.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_textediting_spellcheck.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_textediting_thesaurus.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_textinlineobject_variables.so
+%attr(755,root,root) %{_libdir}/kde4/calligrathumbnail.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_tool_basicflakes.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_tool_defaults.so
 %attr(755,root,root) %{_libdir}/kde4/kolcmsengine.so
 %attr(755,root,root) %{_libdir}/kde4/kopabackgroundtool.so
 %attr(755,root,root) %{_libdir}/kde4/koreport_barcodeplugin.so
@@ -544,20 +582,52 @@ fi
 %dir %{_libdir}/calligra/imports/org
 %{_desktopdir}/kde4/calligra.desktop
 %{_desktopdir}/kde4/okularApplication_odp.desktop
+%{_datadir}/kde4/services/calligra_device_spacenavigator.desktop
 %{_datadir}/kde4/services/calligradocinfopropspage.desktop
+%{_datadir}/kde4/services/calligra_docker_defaults.desktop
+%{_datadir}/kde4/services/calligra_docker_textdocumentinspection.desktop
+%{_datadir}/kde4/services/calligra_filter_pdf2svg.desktop
+%{_datadir}/kde4/services/calligra/koreport_barcodeplugin.desktop
+%{_datadir}/kde4/services/calligra/koreport_mapsplugin.desktop
+%{_datadir}/kde4/services/calligra/koreport_webplugin.desktop
+%{_datadir}/kde4/services/calligra_odg_thumbnail.desktop
+%{_datadir}/kde4/services/calligra_semanticitem_contact.desktop
+%{_datadir}/kde4/services/calligra_semanticitem_event.desktop
+%{_datadir}/kde4/services/calligra_semanticitem_location.desktop
+%{_datadir}/kde4/services/calligra_shape_artistictext.desktop
+%{_datadir}/kde4/services/calligra_shape_chart.desktop
+%{_datadir}/kde4/services/calligra_shape_formular.desktop
+%{_datadir}/kde4/services/calligra_shape_music.desktop
+%{_datadir}/kde4/services/calligra_shape_paths.desktop
+%{_datadir}/kde4/services/calligra_shape_picture.desktop
+%{_datadir}/kde4/services/calligra_shape_plugin.desktop
+%{_datadir}/kde4/services/calligra_shape_spreadsheet-deferred.desktop
+%{_datadir}/kde4/services/calligra_shape_spreadsheet.desktop
+%{_datadir}/kde4/services/calligra_shape_text.desktop
+%{_datadir}/kde4/services/calligra_shape_threed.desktop
+%{_datadir}/kde4/services/calligra_shape_vector.desktop
+%{_datadir}/kde4/services/calligra_shape_video.desktop
 %{_datadir}/kde4/services/calligrastageeventactions.desktop
 %{_datadir}/kde4/services/calligrastagetoolanimation.desktop
-%{_datadir}/kde4/services/calligra_odg_thumbnail.desktop
+%{_datadir}/kde4/services/calligra_textediting_autocorrect.desktop
+%{_datadir}/kde4/services/calligra_textediting_changecase.desktop
+%{_datadir}/kde4/services/calligra_textediting_spellcheck.desktop
+%{_datadir}/kde4/services/calligra_textediting_thesaurus.desktop
+%{_datadir}/kde4/services/calligra_textinlineobject_variables.desktop
+%{_datadir}/kde4/services/calligra_tool_basicflakes.desktop
+%{_datadir}/kde4/services/calligra_tool_defaults.desktop
 %{_datadir}/kde4/services/kformulapart.desktop
 %{_datadir}/kde4/services/kolcmsengine.desktop
 %{_datadir}/kde4/services/kopabackgroundtool.desktop
 %{_datadir}/kde4/services/libokularGenerator_odp.desktop
+%{_datadir}/kde4/services/okularOdp.desktop
 %{_datadir}/kde4/servicetypes/calligra_application.desktop
+%{_datadir}/kde4/servicetypes/calligradb_driver.desktop
 %{_datadir}/kde4/servicetypes/calligra_deferred_plugin.desktop
+%{_datadir}/kde4/servicetypes/calligradocker.desktop
 %{_datadir}/kde4/servicetypes/calligra_filter.desktop
 %{_datadir}/kde4/servicetypes/calligra_part.desktop
-%{_datadir}/kde4/servicetypes/calligradb_driver.desktop
-%{_datadir}/kde4/servicetypes/calligradocker.desktop
+%{_datadir}/kde4/servicetypes/calligra_semanticitem.desktop
 %{_datadir}/kde4/servicetypes/filtereffect.desktop
 %{_datadir}/kde4/servicetypes/flake*.desktop
 %{_datadir}/kde4/servicetypes/inlinetextobject.desktop
@@ -586,11 +656,26 @@ fi
 %attr(755,root,root) %{_libdir}/libkarbonui.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libkarbonui.so.13
 %attr(755,root,root) %{_libdir}/kde4/*karbon*.*
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_eps2svgai.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_wmf2svg.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_xfig2odg.so
 %{_desktopdir}/kde4/*karbon.desktop
 %{_datadir}/apps/karbon
 %{_datadir}/config/karbonrc
+%{_datadir}/kde4/services/calligra_filter_eps2svgai.desktop
+%{_datadir}/kde4/services/calligra_filter_karbon1x2karbon.desktop
+%{_datadir}/kde4/services/calligra_filter_karbon2jpg.desktop
+%{_datadir}/kde4/services/calligra_filter_karbon2png.desktop
+%{_datadir}/kde4/services/calligra_filter_karbon2svg.desktop
+%{_datadir}/kde4/services/calligra_filter_karbon2wmf.desktop
+%{_datadir}/kde4/services/calligra_filter_svg2karbon.desktop
+%{_datadir}/kde4/services/calligra_filter_svgz2karbon.desktop
+%{_datadir}/kde4/services/calligra_filter_wmf2svg.desktop
+%{_datadir}/kde4/services/calligra_filter_xfig2odg.desktop
 %{_datadir}/kde4/services/karbon*
 %{_datadir}/kde4/services/ServiceMenus/karbon_print.desktop
+%{_datadir}/kde4/servicetypes/karbon_dock.desktop
+%{_datadir}/kde4/servicetypes/karbon_viewplugin.desktop
 %{_datadir}/templates/Illustration.desktop
 %{_datadir}/templates/.source/Illustration.*
 #{_kdedocdir}/en/karbon/
@@ -656,6 +741,29 @@ fi
 # kexi-driver-xbase
 %attr(755,root,root) %{_libdir}/kde4/kexidb_xbasedriver.so
 %attr(755,root,root) %{_libdir}/kde4/keximigrate_xbase.so
+%{_datadir}/kde4/services/calligra/kexicsv_importexporthandler.desktop
+%{_datadir}/kde4/services/calligra/kexidb_mysqldriver.desktop
+%{_datadir}/kde4/services/calligra/kexidb_sqlite3driver.desktop
+%{_datadir}/kde4/services/calligra/kexidb_sybasedriver.desktop
+%{_datadir}/kde4/services/calligra/kexidb_xbasedriver.desktop
+%{_datadir}/kde4/services/calligra/kexiformhandler.desktop
+%{_datadir}/kde4/services/calligra/keximigrate_mdb.desktop
+%{_datadir}/kde4/services/calligra/keximigrate_mysql.desktop
+%{_datadir}/kde4/services/calligra/keximigrate_spreadsheet.desktop
+%{_datadir}/kde4/services/calligra/keximigrate_sybase.desktop
+%{_datadir}/kde4/services/calligra/keximigrate_txt.desktop
+%{_datadir}/kde4/services/calligra/keximigrate_xbase.desktop
+%{_datadir}/kde4/services/calligra/keximigrationhandler.desktop
+%{_datadir}/kde4/services/calligra/kexiqueryhandler.desktop
+%{_datadir}/kde4/services/calligra/kexirelationdesignshape.desktop
+%{_datadir}/kde4/services/calligra/kexireporthandler.desktop
+%{_datadir}/kde4/services/calligra/kexiscripthandler.desktop
+%{_datadir}/kde4/services/calligra/kexitablehandler.desktop
+%{_datadir}/kde4/services/calligra/kformdesigner_containers.desktop
+%{_datadir}/kde4/services/calligra/kformdesigner_kexidbfactory.desktop
+%{_datadir}/kde4/services/calligra/kformdesigner_mapbrowser.desktop
+%{_datadir}/kde4/services/calligra/kformdesigner_stdwidgets.desktop
+%{_datadir}/kde4/services/calligra/kformdesigner_webbrowser.desktop
 
 %files plan
 %defattr(644,root,root,755)
@@ -681,6 +789,7 @@ fi
 %attr(755,root,root) %{_libdir}/kde4/kplatorcpsscheduler.so
 %attr(755,root,root) %{_libdir}/kde4/krossmoduleplan.so
 %{_libdir}/kde4/planconvert
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_mpxj2plan.so
 %attr(755,root,root) %{_libdir}/kde4/planicalexport.so
 %attr(755,root,root) %{_libdir}/kde4/plankplatoimport.so
 %attr(755,root,root) %{_libdir}/kde4/planpart.so
@@ -694,9 +803,13 @@ fi
 %{_datadir}/config.kcfg/planworksettings.kcfg
 %{_datadir}/config/planrc
 %{_datadir}/config/planworkrc
+%{_datadir}/kde4/services/calligra_filter_mpp2plan.desktop
+%{_datadir}/kde4/services/calligra_filter_mpx2plan.desktop
+%{_datadir}/kde4/services/calligra_filter_planner2plan.desktop
 %{_datadir}/kde4/services/krossmoduleplan.desktop
 %{_datadir}/kde4/services/plan*.desktop
 %{_datadir}/kde4/servicetypes/plan_schedulerplugin.desktop
+%{_datadir}/kde4/servicetypes/plan_viewplugin.desktop
 %{_datadir}/mime/packages/calligra_planner_mpp.xml
 
 %files stage
@@ -706,6 +819,9 @@ fi
 %attr(755,root,root) %{_libdir}/libkdeinit4_calligrastage.so
 %attr(755,root,root) %{_libdir}/libcalligrastageprivate.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libcalligrastageprivate.so.13
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_kpr2odp.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_ppt2odp.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_pptx2odp.so
 %attr(755,root,root) %{_libdir}/kde4/kpr_pageeffect_*.so
 %attr(755,root,root) %{_libdir}/kde4/kpr_shapeanimation_*.so
 %attr(755,root,root) %{_libdir}/kde4/kprvariables.so
@@ -713,10 +829,13 @@ fi
 %{_desktopdir}/kde4/*stage.desktop
 %{_datadir}/apps/stage
 %{_datadir}/config/stagerc
+%{_datadir}/kde4/services/calligra_filter_kpr2odp.desktop
+%{_datadir}/kde4/services/calligra_filter_ppt2odp.desktop
+%{_datadir}/kde4/services/calligra_filter_pptx2odp.desktop
 %{_datadir}/kde4/services/kpr*.desktop
 %{_datadir}/kde4/services/ServiceMenus/stage_print.desktop
-%{_datadir}/kde4/services/stage_*_thumbnail.desktop
 %{_datadir}/kde4/services/stagepart.desktop
+%{_datadir}/kde4/services/stage_*_thumbnail.desktop
 %{_datadir}/kde4/servicetypes/kpr*.desktop
 %{_datadir}/kde4/servicetypes/presentationeventaction.desktop
 %{_datadir}/kde4/servicetypes/scripteventaction.desktop
@@ -727,6 +846,7 @@ fi
 %files krita
 %defattr(644,root,root,755)
 %doc krita/AUTHORS krita/ChangeLog krita/README
+%attr(755,root,root) %{_bindir}/gmicparser
 %attr(755,root,root) %{_bindir}/krita
 %attr(755,root,root) %{_bindir}/kritagemini
 %attr(755,root,root) %{_bindir}/kritasketch
@@ -740,15 +860,15 @@ fi
 %{_datadir}/apps/color-schemes/Krita*.colors
 %{_datadir}/apps/krita
 %{_datadir}/apps/kritagemini
-%{_datadir}/apps/kritasketch
 %{_datadir}/apps/kritaplugins
+%{_datadir}/apps/kritasketch
 %{_datadir}/color/icc/krita
 %{_datadir}/config/krita*rc
 %{_datadir}/kde4/services/krita*.desktop
 %{_datadir}/kde4/services/ServiceMenus/krita_print.desktop
 %{_datadir}/kde4/servicetypes/krita*.desktop
-%{_datadir}/mime/packages/krita.xml
 %{_datadir}/mime/packages/krita_ora.xml
+%{_datadir}/mime/packages/krita.xml
 
 %files sheets
 %defattr(644,root,root,755)
@@ -758,6 +878,19 @@ fi
 %attr(755,root,root) %ghost %{_libdir}/libcalligrasheetscommon.so.13
 %attr(755,root,root) %{_libdir}/libcalligrasheetsodf.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libcalligrasheetsodf.so.13
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_applixspread2kspread.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_csv2sheets.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_dbase2kspread.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_gnumeric2sheets.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_kspread2tex.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_opencalc2sheets.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_qpro2sheets.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_sheets2csv.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_sheets2gnumeric.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_sheets2html.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_sheets2opencalc.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_xls2ods.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_xlsx2ods.so
 %attr(755,root,root) %{_libdir}/kde4/calligrasheets*.so
 %attr(755,root,root) %{_libdir}/kde4/krossmodulesheets.so
 %attr(755,root,root) %{_libdir}/kde4/kspread*module.so
@@ -768,13 +901,30 @@ fi
 %{_datadir}/apps/sheets/
 %{_datadir}/config.kcfg/sheets.kcfg
 %{_datadir}/config/sheetsrc
+%{_datadir}/kde4/services/calligra_filter_applixspread2kspread.desktop
+%{_datadir}/kde4/services/calligra_filter_csv2sheets.desktop
+%{_datadir}/kde4/services/calligra_filter_dbase2kspread.desktop
+%{_datadir}/kde4/services/calligra_filter_gnumeric2sheets.desktop
+%{_datadir}/kde4/services/calligra_filter_kspread2tex.desktop
+%{_datadir}/kde4/services/calligra_filter_opencalc2sheets.desktop
+%{_datadir}/kde4/services/calligra_filter_qpro2sheets.desktop
+%{_datadir}/kde4/services/calligra_filter_sheets2csv.desktop
+%{_datadir}/kde4/services/calligra_filter_sheets2gnumeric.desktop
+%{_datadir}/kde4/services/calligra_filter_sheets2html.desktop
+%{_datadir}/kde4/services/calligra_filter_sheets2opencalc.desktop
+%{_datadir}/kde4/services/calligra_filter_xls2ods.desktop
+%{_datadir}/kde4/services/calligra_filter_xlsx2ods.desktop
 %{_datadir}/kde4/services/krossmodulesheets.desktop
-%{_datadir}/kde4/services/sheets_*_thumbnail.desktop
 %{_datadir}/kde4/services/kspread*module.desktop
 %{_datadir}/kde4/services/kspread_plugin_tool_calendar.desktop
 %{_datadir}/kde4/services/ServiceMenus/sheets_print.desktop
 %{_datadir}/kde4/services/sheetspart.desktop
+%{_datadir}/kde4/services/sheetspivottables.desktop
+%{_datadir}/kde4/services/sheetsscripting.desktop
+%{_datadir}/kde4/services/sheetssolver.desktop
+%{_datadir}/kde4/services/sheets_*_thumbnail.desktop
 %{_datadir}/kde4/servicetypes/sheets_plugin.desktop
+%{_datadir}/kde4/servicetypes/sheets_viewplugin.desktop
 %{_datadir}/templates/.source/SpreadSheet.*
 %{_datadir}/templates/SpreadSheet.desktop
 %{_kdedocdir}/en/sheets/
@@ -787,15 +937,36 @@ fi
 %attr(755,root,root) %ghost %{_libdir}/libkordf.so.13
 %attr(755,root,root) %{_libdir}/libwordsprivate.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libwordsprivate.so.13
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_applixword2odt.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_ascii2words.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_doc2odt.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_docx2odt.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_html2ods.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_odt2ascii.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_odt2epub2.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_odt2html.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_odt2mobi.so
+%attr(755,root,root) %{_libdir}/kde4/calligra_filter_rtf2odt.so
 %attr(755,root,root) %{_libdir}/kde4/wordspart.so
-%{_desktopdir}/kde4/words.desktop
 %{_datadir}/apps/words
 %{_datadir}/config/wordsrc
+%{_datadir}/kde4/services/calligra_filter_applixword2odt.desktop
+%{_datadir}/kde4/services/calligra_filter_ascii2words.desktop
+%{_datadir}/kde4/services/calligra_filter_doc2odt.desktop
+%{_datadir}/kde4/services/calligra_filter_docx2odt.desktop
+%{_datadir}/kde4/services/calligra_filter_html2ods.desktop
+%{_datadir}/kde4/services/calligra_filter_odt2ascii.desktop
+%{_datadir}/kde4/services/calligra_filter_odt2epub2.desktop
+%{_datadir}/kde4/services/calligra_filter_odt2html.desktop
+%{_datadir}/kde4/services/calligra_filter_odt2mobi.desktop
+%{_datadir}/kde4/services/calligra_filter_rtf2odt.desktop
 %{_datadir}/kde4/services/ServiceMenus/words_print.desktop
-%{_datadir}/kde4/services/words_*_thumbnail.desktop
 %{_datadir}/kde4/services/wordspart.desktop
+%{_datadir}/kde4/services/words_*_thumbnail.desktop
 %{_datadir}/templates/.source/TextDocument.*
 %{_datadir}/templates/TextDocument.desktop
+%{_desktopdir}/kde4/calligrawords_ascii.desktop
+%{_desktopdir}/kde4/words.desktop
 
 %files author
 %defattr(644,root,root,755)
@@ -817,6 +988,8 @@ fi
 %{_desktopdir}/kde4/braindump.desktop
 %{_datadir}/apps/braindump
 %{_datadir}/apps/stateshape
+%{_datadir}/kde4/services/braindump_shape_state.desktop
+%{_datadir}/kde4/services/braindump_shape_web.desktop
 %{_datadir}/kde4/servicetypes/braindump_extensions.desktop
 
 %files devel

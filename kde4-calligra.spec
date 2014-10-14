@@ -13,11 +13,9 @@
 #     Qt bindings for the OpenShiva interpreter (part of libQtGTL)
 #     Required for Shiva based Generators and Filters
 #
-# - enable pqxx bcond when calligra updates to libpqx 4.0
-#
 # Conditional build:
 %bcond_without	pdf		# build without PDF support
-%bcond_with	pqxx		# build postgresql driver for kexi
+%bcond_without	pqxx		# build postgresql driver for kexi
 
 %define		_state		stable
 %define		orgname		calligra
@@ -29,7 +27,7 @@ Summary:	Calligra - powerful office suite for KDE
 Summary(pl.UTF-8):	Calligra - potężny pakiet biurowy dla KDE
 Name:		kde4-calligra
 Version:	2.8.6
-Release:	0.1
+Release:	1
 License:	GPL/LGPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{orgname}-%{version}/%{orgname}-%{version}.tar.xz
@@ -73,7 +71,7 @@ BuildRequires:	libicu-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libodfgen-devel
 BuildRequires:	libpng-devel
-%{?with_pqxx:BuildRequires:	libpqxx-devel >= 3.0.0}
+%{?with_pqxx:BuildRequires:	libpqxx-devel >= 4.0.0}
 BuildRequires:	libspnav-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	libtiff-devel

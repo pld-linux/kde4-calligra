@@ -27,7 +27,7 @@ Summary:	Calligra - powerful office suite for KDE
 Summary(pl.UTF-8):	Calligra - potężny pakiet biurowy dla KDE
 Name:		kde4-calligra
 Version:	2.8.6
-Release:	1
+Release:	2
 License:	GPL/LGPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{orgname}-%{version}/%{orgname}-%{version}.tar.xz
@@ -585,9 +585,6 @@ fi
 %{_datadir}/kde4/services/calligra_docker_defaults.desktop
 %{_datadir}/kde4/services/calligra_docker_textdocumentinspection.desktop
 %{_datadir}/kde4/services/calligra_filter_pdf2svg.desktop
-%{_datadir}/kde4/services/calligra/koreport_barcodeplugin.desktop
-%{_datadir}/kde4/services/calligra/koreport_mapsplugin.desktop
-%{_datadir}/kde4/services/calligra/koreport_webplugin.desktop
 %{_datadir}/kde4/services/calligra_odg_thumbnail.desktop
 %{_datadir}/kde4/services/calligra_semanticitem_contact.desktop
 %{_datadir}/kde4/services/calligra_semanticitem_event.desktop
@@ -614,6 +611,10 @@ fi
 %{_datadir}/kde4/services/calligra_textinlineobject_variables.desktop
 %{_datadir}/kde4/services/calligra_tool_basicflakes.desktop
 %{_datadir}/kde4/services/calligra_tool_defaults.desktop
+%dir %{_datadir}/kde4/services/calligra
+%{_datadir}/kde4/services/calligra/koreport_barcodeplugin.desktop
+%{_datadir}/kde4/services/calligra/koreport_mapsplugin.desktop
+%{_datadir}/kde4/services/calligra/koreport_webplugin.desktop
 %{_datadir}/kde4/services/kformulapart.desktop
 %{_datadir}/kde4/services/kolcmsengine.desktop
 %{_datadir}/kde4/services/kopabackgroundtool.desktop
@@ -726,8 +727,8 @@ fi
 %if %{with pqxx}
 %attr(755,root,root) %{_libdir}/kde4/kexidb_pqxxsqldriver.*
 %attr(755,root,root) %{_libdir}/kde4/keximigrate_pqxx.*
-%{_datadir}/kde4/services/kexidb_pqxxsqldriver.desktop
-%{_datadir}/kde4/services/keximigrate_pqxx.desktop
+%{_datadir}/kde4/services/calligra/kexidb_pqxxsqldriver.desktop
+%{_datadir}/kde4/services/calligra/keximigrate_pqxx.desktop
 %endif
 # kexi-driver-sybase
 %attr(755,root,root) %{_libdir}/kde4/kexidb_sybasedriver.so

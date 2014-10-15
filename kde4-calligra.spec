@@ -27,7 +27,7 @@ Summary:	Calligra - powerful office suite for KDE
 Summary(pl.UTF-8):	Calligra - potężny pakiet biurowy dla KDE
 Name:		kde4-calligra
 Version:	2.8.6
-Release:	2
+Release:	3
 License:	GPL/LGPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{orgname}-%{version}/%{orgname}-%{version}.tar.xz
@@ -851,6 +851,7 @@ fi
 %attr(755,root,root) %{_bindir}/kritasketch
 %attr(755,root,root) %{_libdir}/libkdeinit4_krita.so
 %attr(755,root,root) %{_libdir}/libkrita*.so.*.*.*
+%attr(755,root,root) %{_libdir}/libkritasketchlib.so
 %attr(755,root,root) %ghost %{_libdir}/libkrita*.so.13
 %attr(755,root,root) %{_libdir}/kde4/*krita*.so
 %{_libdir}/calligra/imports/org/krita
@@ -995,6 +996,7 @@ fi
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
 %exclude %{_libdir}/libkdeinit4_*.so
+%exclude %{_libdir}/libkritasketchlib.so
 %{_includedir}/*.h
 %{_includedir}/calligra
 %{_includedir}/kexi

@@ -50,7 +50,7 @@ BuildRequires:	exiv2-devel
 BuildRequires:	fftw3-devel
 BuildRequires:	fontconfig-devel
 BuildRequires:	freetds-devel
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	giflib-devel
 BuildRequires:	glew-devel
 BuildRequires:	gmm-devel

@@ -1,0 +1,40 @@
+diff -ur calligra-2.8.7/kexi/migration/mdb/src/keximdb/mdbmigrate.h calligra-2.8.7-moc/kexi/migration/mdb/src/keximdb/mdbmigrate.h
+--- calligra-2.8.7/kexi/migration/mdb/src/keximdb/mdbmigrate.h	2014-11-30 15:02:18.000000000 +0100
++++ calligra-2.8.7-moc/kexi/migration/mdb/src/keximdb/mdbmigrate.h	2017-04-22 12:39:35.348672097 +0200
+@@ -21,7 +21,9 @@
+ #ifndef MDBMIGRATE_H
+ #define MDBMIGRATE_H
+ 
++#ifndef Q_MOC_RUN
+ #include <mdbtools.h>
++#endif
+ 
+ #include <migration/keximigrate.h>
+ #include <db/field.h>
+diff -ur calligra-2.8.7/kexi/plugins/forms/widgets/mapbrowser/MapBrowserWidget.h calligra-2.8.7-moc/kexi/plugins/forms/widgets/mapbrowser/MapBrowserWidget.h
+--- calligra-2.8.7/kexi/plugins/forms/widgets/mapbrowser/MapBrowserWidget.h	2014-11-30 15:02:18.000000000 +0100
++++ calligra-2.8.7-moc/kexi/plugins/forms/widgets/mapbrowser/MapBrowserWidget.h	2017-04-22 12:31:24.932008982 +0200
+@@ -21,7 +21,9 @@
+ #ifndef MAPBROWSERWIDGET_H
+ #define MAPBROWSERWIDGET_H
+ 
++#ifndef Q_MOC_RUN
+ #include <marble/MarbleWidget.h>
++#endif
+ 
+ #include "widgetfactory.h"
+ #include "container.h"
+diff -ur calligra-2.8.7/plugins/reporting/maps/KoReportItemMaps.h calligra-2.8.7-moc/plugins/reporting/maps/KoReportItemMaps.h
+--- calligra-2.8.7/plugins/reporting/maps/KoReportItemMaps.h	2014-11-30 15:02:20.000000000 +0100
++++ calligra-2.8.7-moc/plugins/reporting/maps/KoReportItemMaps.h	2017-04-22 13:52:08.408640585 +0200
+@@ -29,7 +29,9 @@
+ #include <kdebug.h>
+ #include <klocalizedstring.h>
+ #include <kglobalsettings.h>
++#ifndef Q_MOC_RUN
+ #include <marble/MarbleWidget.h>
++#endif
+ #include <QMap>
+ 
+ class QImage;
+Only in calligra-2.8.7-moc/plugins/reporting/maps: KoReportItemMaps.h~

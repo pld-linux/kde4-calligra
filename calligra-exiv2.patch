@@ -1,0 +1,14 @@
+diff -ruNp calligra-2.8.7.orig/CMakeLists.txt calligra-2.8.7/CMakeLists.txt
+--- calligra-2.8.7.orig/CMakeLists.txt	2014-11-30 15:02:18.000000000 +0100
++++ calligra-2.8.7/CMakeLists.txt	2019-03-01 13:32:40.627835371 +0100
+@@ -438,8 +438,8 @@ macro_log_feature(QCA2_FOUND "QCA" "Qt C
+ ## Test for exiv2
+ ##
+ set(EXIV2_MIN_VERSION "0.16")
+-macro_optional_find_package(Exiv2)
+-macro_log_feature(EXIV2_FOUND "Exiv2" "Image metadata library and tools" "http://www.exiv2.org" FALSE "0.16" "Required by Krita")
++macro_optional_find_package(exiv2)
++macro_log_feature(EXIV2_FOUND "exiv2" "Image metadata library and tools" "http://www.exiv2.org" FALSE "0.16" "Required by Krita")
+ 
+ ##
+ ## Test for soprano

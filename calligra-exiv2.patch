@@ -8,7 +8,7 @@ diff -ruNp calligra-2.8.7.orig/CMakeLists.txt calligra-2.8.7/CMakeLists.txt
 -macro_optional_find_package(Exiv2)
 -macro_log_feature(EXIV2_FOUND "Exiv2" "Image metadata library and tools" "http://www.exiv2.org" FALSE "0.16" "Required by Krita")
 +macro_optional_find_package(exiv2)
-+macro_log_feature(EXIV2_FOUND "exiv2" "Image metadata library and tools" "http://www.exiv2.org" FALSE "0.16" "Required by Krita")
++macro_log_feature(exiv2_FOUND "exiv2" "Image metadata library and tools" "http://www.exiv2.org" FALSE "0.16" "Required by Krita")
  
  ##
  ## Test for soprano

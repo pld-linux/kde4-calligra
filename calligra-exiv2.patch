@@ -1,7 +1,7 @@
 diff -ruNp calligra-2.8.7.orig/CMakeLists.txt calligra-2.8.7/CMakeLists.txt
 --- calligra-2.8.7.orig/CMakeLists.txt	2014-11-30 15:02:18.000000000 +0100
 +++ calligra-2.8.7/CMakeLists.txt	2019-03-01 13:32:40.627835371 +0100
-@@ -438,8 +438,8 @@ macro_log_feature(QCA2_FOUND "QCA" "Qt C
+@@ -438,8 +438,11 @@ macro_log_feature(QCA2_FOUND "QCA" "Qt C
  ## Test for exiv2
  ##
  set(EXIV2_MIN_VERSION "0.16")
@@ -9,6 +9,21 @@ diff -ruNp calligra-2.8.7.orig/CMakeLists.txt calligra-2.8.7/CMakeLists.txt
 -macro_log_feature(EXIV2_FOUND "Exiv2" "Image metadata library and tools" "http://www.exiv2.org" FALSE "0.16" "Required by Krita")
 +macro_optional_find_package(exiv2)
 +macro_log_feature(exiv2_FOUND "exiv2" "Image metadata library and tools" "http://www.exiv2.org" FALSE "0.16" "Required by Krita")
++if(exiv2_FOUND)
++    set(EXIV2_LIBRARIES exiv2lib)
++endif()
  
  ##
  ## Test for soprano
+@@ -937,9 +937,9 @@
+     calligra_disable_product(SHEETS_PART "Eigen devel not found")
+ endif(NOT EIGEN2_FOUND)
+ 
+-if(NOT EIGEN2_FOUND OR NOT EXIV2_FOUND OR NOT HAVE_REQUIRED_LCMS_VERSION OR NOT SHARED_MIME_INFO_FOUND)
++if(NOT EIGEN2_FOUND OR NOT exiv2_FOUND OR NOT HAVE_REQUIRED_LCMS_VERSION OR NOT SHARED_MIME_INFO_FOUND)
+     calligra_disable_product(KRITA_APP "SharedMimeInfo|libeigen2|libexiv2|lcms devel not found ")
+-endif(NOT EIGEN2_FOUND OR NOT EXIV2_FOUND OR NOT HAVE_REQUIRED_LCMS_VERSION OR NOT SHARED_MIME_INFO_FOUND)
++endif(NOT EIGEN2_FOUND OR NOT exiv2_FOUND OR NOT HAVE_REQUIRED_LCMS_VERSION OR NOT SHARED_MIME_INFO_FOUND)
+ 
+ if(NOT APPLE AND NOT REQUIRED_Xinput_FOUND)
+     calligra_disable_product(KRITA_APP "Xinput devel not found ")

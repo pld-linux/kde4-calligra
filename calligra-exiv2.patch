@@ -27,3 +27,26 @@ diff -ruNp calligra-2.8.7.orig/CMakeLists.txt calligra-2.8.7/CMakeLists.txt
  
  if(NOT APPLE AND NOT REQUIRED_Xinput_FOUND)
      calligra_disable_product(KRITA_APP "Xinput devel not found ")
+--- calligra-2.8.7/krita/ui/kisexiv2/kis_xmp_io.cpp.orig	2014-11-30 15:01:15.000000000 +0100
++++ calligra-2.8.7/krita/ui/kisexiv2/kis_xmp_io.cpp	2019-03-04 23:08:54.941391753 +0100
+@@ -17,7 +17,7 @@
+ #include "kis_xmp_io.h"
+ 
+ #include <string>
+-#include <exiv2/xmp.hpp>
++#include <exiv2/xmp_exiv2.hpp>
+ 
+ #include "kis_exiv2.h"
+ 
+@@ -277,9 +277,8 @@
+                 const Exiv2::XmpArrayValue* xav = dynamic_cast<const Exiv2::XmpArrayValue*>(value.get());
+                 Q_ASSERT(xav);
+                 QList<KisMetaData::Value> array;
+-                for (std::vector< std::string >::const_iterator it = xav->value_.begin();
+-                        it != xav->value_.end(); ++it) {
+-                    QString value = it->c_str();
++		for (int i=0; i<xav->count(); i++) {
++                    QString value = xav->toString(i).c_str();
+                     if (parser) {
+                         array.push_back(parser->parse(value));
+                     } else {

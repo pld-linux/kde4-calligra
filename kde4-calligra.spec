@@ -3,15 +3,16 @@
 #-- The following OPTIONAL packages could NOT be located on your system.
 #-- Consider installing them to enable more features from this software.
 #-----------------------------------------------------------------------------
-#   * OpenCTL (0.9.10 or higher)  <http://www.opengtl.org>
-#     Free Color Transformation Language implementation (part of OpenGTL)
-#     Required for High Dynamic Range Color Spaces, YCbCr and LMS support
-#   * OpenShiva  <http://www.opengtl.org>
-#     OpenShiva interpreter for the Shiva Kernel Language (part of OpenGTL)
-#     Required for Shiva based Generators and Filters
-#   * QtShiva  <http://www.opengtl.org>
-#     Qt bindings for the OpenShiva interpreter (part of libQtGTL)
-#     Required for Shiva based Generators and Filters
+#   * Vc  <http://code.compeng.uni-frankfurt.de/projects/vc>
+#     Portable, zero-overhead SIMD library for C++
+#     Required by the Krita for vectorization
+#   * openjpeg  <http://www.openjpeg.org>
+#     Free library for JPEG 2000 image compression
+#     Required by the Krita JPEG 2000 filter
+#   * Cauchy's M2MML  <https://bitbucket.org/cyrille/cauchy>
+#     Matlab/Octave to MathML compiler
+#     Required for the matlab/octave formula tool
+#   * LibOdfGen, LibWpd, LibWpg, LibWps, LibVisio, LibEtonyek - pre-C++11 versions are expected
 #
 # Conditional build:
 %bcond_without	pdf		# build without PDF support
@@ -27,13 +28,15 @@ Summary:	Calligra - powerful office suite for KDE
 Summary(pl.UTF-8):	Calligra - potężny pakiet biurowy dla KDE
 Name:		kde4-calligra
 Version:	2.8.7
-Release:	27
+Release:	28
 License:	GPL/LGPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{orgname}-%{version}/%{orgname}-%{version}.tar.xz
 # Source0-md5:	5ba4b76e3f81daffb28d3ed545908736
 Patch0:		moc.patch
 Patch1:		%{orgname}-exiv2.patch
+Patch2:		%{orgname}-icu.patch
+Patch3:		%{orgname}-boost.patch
 URL:		http://www.calligra-suite.org/
 BuildRequires:	GraphicsMagick-devel
 BuildRequires:	OpenEXR-devel
@@ -67,24 +70,24 @@ BuildRequires:	kde4-libksane-devel >= %{kdever}
 BuildRequires:	kde4-marble-devel >= %{kdever}
 BuildRequires:	kde4-okular-devel >= %{kdever}
 BuildRequires:	lcms2-devel
-BuildRequires:	libetonyek-devel
+#BuildRequires:	libetonyek-devel < 0.1
 BuildRequires:	libexif-devel >= 0.6.12
 BuildRequires:	libicu-devel
 BuildRequires:	libjpeg-devel
-BuildRequires:	libodfgen-devel
+#BuildRequires:	libodfgen-devel < 0.1
 BuildRequires:	libpng-devel
 %{?with_pqxx:BuildRequires:	libpqxx-devel >= 4.0.0}
 BuildRequires:	libspnav-devel
 BuildRequires:	libtiff-devel
-BuildRequires:	libtiff-devel
-BuildRequires:	libvisio-devel
-BuildRequires:	libwpd-devel >= 0.9
-BuildRequires:	libwpg-devel >= 0.2
-BuildRequires:	libwps-devel
+#BuildRequires:	libvisio-devel < 0.1
+#BuildRequires:	libwpd-devel >= 0.9 < 0.10
+#BuildRequires:	libwpg-devel >= 0.2 < 0.3
+#uildRequires:	libwps-devel >= 0.2 < 0.3
 BuildRequires:	libxml2-devel >= 0:2.4.8
 BuildRequires:	libxslt-devel >= 1.0.7
 BuildRequires:	mysql-devel
-BuildRequires:	openjpeg2-devel >= 1.3
+BuildRequires:	openjpeg-devel >= 1.5
+BuildRequires:	openjpeg-devel < 2
 BuildRequires:	openssl-devel
 BuildRequires:	pkgconfig
 %{?with_pdf:BuildRequires:	poppler-Qt-devel >= 0.6}
@@ -350,17 +353,19 @@ finalną publikację.
 %setup -q -n %{orgname}-%{version}
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
+%patch3 -p1
 
 %build
 install -d build
 cd build
-%cmake \
-	-DBUILD_cstester:BOOL=OFF \
+%cmake .. \
 	-DBUILD_active:BOOL=OFF \
+	-DBUILD_cstester:BOOL=OFF \
 	-DBUILD_koabstraction:BOOL=OFF \
 	-DBUILD_mobile:BOOL=OFF \
 	-DKDE4_BUILD_TESTS:BOOL=OFF \
-	../
+	-DOPENJPEG_INCLUDE_DIR:PATH=/usr/include/openjpeg-1.5
 
 %{__make}
 

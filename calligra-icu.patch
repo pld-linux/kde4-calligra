@@ -1,0 +1,38 @@
+--- calligra-2.8.7/libs/db/tableviewdata.cpp.orig	2014-11-30 15:02:20.000000000 +0100
++++ calligra-2.8.7/libs/db/tableviewdata.cpp	2019-04-19 20:57:59.892689347 +0200
+@@ -51,7 +51,7 @@
+ public:
+     CollatorInstance() {
+         UErrorCode status = U_ZERO_ERROR;
+-        m_collator = Collator::createInstance(status);
++        m_collator = icu::Collator::createInstance(status);
+         if (U_FAILURE(status)) {
+             kWarning() << "Could not create instance of collator: " << status;
+             m_collator = NULL;
+@@ -63,7 +63,7 @@
+             kWarning() << "Could not set collator attribute: " << status;
+     }
+ 
+-    Collator* getCollator() {
++    icu::Collator* getCollator() {
+         return m_collator;
+     }
+ 
+@@ -72,7 +72,7 @@
+     }
+ 
+ private:
+-    Collator *m_collator;
++    icu::Collator *m_collator;
+ };
+ 
+ K_GLOBAL_STATIC(CollatorInstance, _collator)
+@@ -161,7 +161,7 @@
+     static  bool cmpStringWithCollator(const QVariant& left, const QVariant& right) {
+         const QString &as = left.toString();
+         const QString &bs = right.toString();
+-        return (Collator::LESS == _collator->getCollator()->compare((const UChar *)as.constData(), as.size(),
++        return (icu::Collator::LESS == _collator->getCollator()->compare((const UChar *)as.constData(), as.size(),
+                 (const UChar *)bs.constData(), bs.size())) ? true : false;
+     }
+ 

@@ -1,0 +1,11 @@
+--- calligra-2.8.7/krita/gemini/desktopviewproxy.cpp.orig	2014-11-30 15:02:20.000000000 +0100
++++ calligra-2.8.7/krita/gemini/desktopviewproxy.cpp	2019-04-20 10:31:53.092416765 +0200
+@@ -31,8 +31,6 @@
+ #include <krecentfilesaction.h>
+ #include <kactioncollection.h>
+ 
+-#include <boost/config/posix_features.hpp>
+-
+ #include <KoMainWindow.h>
+ #include <KoFilterManager.h>
+ #include <KoFileDialog.h>

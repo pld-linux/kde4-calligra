@@ -27,13 +27,12 @@
 Summary:	Calligra - powerful office suite for KDE
 Summary(pl.UTF-8):	Calligra - potężny pakiet biurowy dla KDE
 Name:		kde4-calligra
-Version:	2.8.7
-Release:	30
+Version:	2.9.11
+Release:	1
 License:	GPL/LGPL
 Group:		X11/Applications
-Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{orgname}-%{version}/%{orgname}-%{version}.tar.xz
-# Source0-md5:	5ba4b76e3f81daffb28d3ed545908736
-Patch0:		moc.patch
+Source0:	https://download.kde.org/Attic/%{orgname}-%{version}/%{orgname}-%{version}.tar.xz
+# Source0-md5:	a1a4935debae64724cd4c0d17d61ae4e
 Patch1:		%{orgname}-exiv2.patch
 Patch2:		%{orgname}-icu.patch
 Patch3:		%{orgname}-boost.patch
@@ -351,7 +350,6 @@ finalną publikację.
 
 %prep
 %setup -q -n %{orgname}-%{version}
-%patch0 -p1
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1

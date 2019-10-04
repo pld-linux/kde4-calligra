@@ -15,18 +15,6 @@ diff -ruNp calligra-2.8.7.orig/CMakeLists.txt calligra-2.8.7/CMakeLists.txt
  
  ##
  ## Test for soprano
-@@ -937,9 +937,9 @@
-     calligra_disable_product(SHEETS_PART "Eigen devel not found")
- endif(NOT EIGEN2_FOUND)
- 
--if(NOT EIGEN2_FOUND OR NOT EXIV2_FOUND OR NOT HAVE_REQUIRED_LCMS_VERSION OR NOT SHARED_MIME_INFO_FOUND)
-+if(NOT EIGEN2_FOUND OR NOT exiv2_FOUND OR NOT HAVE_REQUIRED_LCMS_VERSION OR NOT SHARED_MIME_INFO_FOUND)
-     calligra_disable_product(KRITA_APP "SharedMimeInfo|libeigen2|libexiv2|lcms devel not found ")
--endif(NOT EIGEN2_FOUND OR NOT EXIV2_FOUND OR NOT HAVE_REQUIRED_LCMS_VERSION OR NOT SHARED_MIME_INFO_FOUND)
-+endif(NOT EIGEN2_FOUND OR NOT exiv2_FOUND OR NOT HAVE_REQUIRED_LCMS_VERSION OR NOT SHARED_MIME_INFO_FOUND)
- 
- if(NOT APPLE AND NOT REQUIRED_Xinput_FOUND)
-     calligra_disable_product(KRITA_APP "Xinput devel not found ")
 --- calligra-2.8.7/krita/ui/kisexiv2/kis_xmp_io.cpp.orig	2014-11-30 15:01:15.000000000 +0100
 +++ calligra-2.8.7/krita/ui/kisexiv2/kis_xmp_io.cpp	2019-03-04 23:08:54.941391753 +0100
 @@ -17,7 +17,7 @@

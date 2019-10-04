@@ -6,6 +6,16 @@
  
 -#include <boost/config/posix_features.hpp>
 -
- #include <KoMainWindow.h>
- #include <KoFilterManager.h>
+ #include <KisMainWindow.h>
+ #include <KisImportExportManager.h>
  #include <KoFileDialog.h>
+--- calligra-2.9.11/gemini/desktopviewproxy.cpp~	2016-02-02 20:53:13.000000000 +0100
++++ calligra-2.9.11/gemini/desktopviewproxy.cpp	2019-10-04 11:33:00.482062671 +0200
+@@ -31,7 +31,6 @@
+ #include <krecentfilesaction.h>
+ #include <kactioncollection.h>
+ 
+-#include <boost/config/posix_features.hpp>
+ #include <KConfigGroup>
+ 
+ #include <KoMainWindow.h>

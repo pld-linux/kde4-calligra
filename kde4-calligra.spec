@@ -75,14 +75,15 @@ BuildRequires:	lcms2-devel
 BuildRequires:	libexif-devel >= 0.6.12
 BuildRequires:	libicu-devel
 BuildRequires:	libjpeg-devel
-#BuildRequires:	libodfgen-devel < 0.1
+BuildRequires:	libodfgen-devel
 BuildRequires:	libpng-devel
 %{?with_pqxx:BuildRequires:	libpqxx-devel >= 4.0.0}
 BuildRequires:	libspnav-devel
 BuildRequires:	libtiff-devel
 #BuildRequires:	libvisio-devel < 0.1
 BuildRequires:	libwpd-devel
-#BuildRequires:	libwpg-devel >= 0.2 < 0.3
+BuildRequires:	libwpg-devel
+#BuildRequires:	libwps-devel
 BuildRequires:	libxml2-devel >= 0:2.4.8
 BuildRequires:	libxslt-devel >= 1.0.7
 BuildRequires:	mysql-devel
@@ -106,7 +107,6 @@ BuildRequires:	xbase-devel
 BuildRequires:	zlib-devel
 Obsoletes:	kde4-koffice
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-#uildRequires:	libwps-devel >= 0.2 < 0.3
 
 %description
 Calligra is an integrated office suite for K Desktop Environment.

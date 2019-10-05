@@ -71,7 +71,7 @@ BuildRequires:	kde4-libksane-devel >= %{kdever}
 BuildRequires:	kde4-marble-devel >= %{kdever}
 BuildRequires:	kde4-okular-devel >= %{kdever}
 BuildRequires:	lcms2-devel
-#BuildRequires:	libetonyek-devel < 0.1
+BuildRequires:	libetonyek-devel
 BuildRequires:	libexif-devel >= 0.6.12
 BuildRequires:	libicu-devel
 BuildRequires:	libjpeg-devel

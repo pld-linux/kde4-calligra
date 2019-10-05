@@ -15,6 +15,15 @@ diff -ruNp calligra-2.8.7.orig/CMakeLists.txt calligra-2.8.7/CMakeLists.txt
  
  ##
  ## Test for soprano
+@@ -847,7 +847,7 @@
+ 
+ calligra_drop_product_on_bad_condition( APP_KRITA
+     EIGEN3_FOUND "Eigen devel not found"
+-    EXIV2_FOUND "libexiv2 devel not found"
++    exiv2_FOUND "libexiv2 devel not found"
+     HAVE_REQUIRED_LCMS_VERSION "lcms devel not found"
+     SHARED_MIME_INFO_FOUND "SharedMimeInfo not found"
+     Boost_SYSTEM_FOUND "boost-system devel not found"
 --- calligra-2.8.7/krita/ui/kisexiv2/kis_xmp_io.cpp.orig	2014-11-30 15:01:15.000000000 +0100
 +++ calligra-2.8.7/krita/ui/kisexiv2/kis_xmp_io.cpp	2019-03-04 23:08:54.941391753 +0100
 @@ -17,7 +17,7 @@
@@ -38,3 +47,13 @@ diff -ruNp calligra-2.8.7.orig/CMakeLists.txt calligra-2.8.7/CMakeLists.txt
                      if (parser) {
                          array.push_back(parser->parse(value));
                      } else {
+--- calligra-2.9.11/krita/ui/kisexiv2/kis_iptc_io.cpp~	2016-02-02 20:53:15.000000000 +0100
++++ calligra-2.9.11/krita/ui/kisexiv2/kis_iptc_io.cpp	2019-10-05 10:39:13.546782615 +0200
+@@ -20,6 +20,7 @@
+ #include <kis_debug.h>
+ 
+ #include <exiv2/iptc.hpp>
++#include <exiv2/exiv2.hpp>
+ 
+ #include "kis_exiv2.h"
+ 

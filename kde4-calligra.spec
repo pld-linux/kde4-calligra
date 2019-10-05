@@ -81,7 +81,7 @@ BuildRequires:	libpng-devel
 BuildRequires:	libspnav-devel
 BuildRequires:	libtiff-devel
 #BuildRequires:	libvisio-devel < 0.1
-#BuildRequires:	libwpd-devel >= 0.9 < 0.10
+BuildRequires:	libwpd-devel
 #BuildRequires:	libwpg-devel >= 0.2 < 0.3
 BuildRequires:	libxml2-devel >= 0:2.4.8
 BuildRequires:	libxslt-devel >= 1.0.7

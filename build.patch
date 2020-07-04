@@ -9,3 +9,29 @@
      };
  public:
      StatesModel();
+--- calligra-2.9.11/kexi/main/startup/KexiTemplatesModel.h.orig	2016-02-02 20:53:13.000000000 +0100
++++ calligra-2.9.11/kexi/main/startup/KexiTemplatesModel.h	2020-07-04 17:37:45.744364463 +0200
+@@ -30,8 +30,8 @@
+     Q_OBJECT
+ public:
+     enum AdditionalRoles {
+-        NameRole = 0x9D419D49,
+-        CategoryRole = 0xA2BEF158
++        NameRole = 0xD419D49,
++        CategoryRole = 0x2BEF158
+     };
+ 
+     explicit KexiTemplatesModel(const KexiTemplateCategoryInfoList& templateCategories,
+--- calligra-2.9.11/kexi/main/startup/KexiRecentProjectsModel.h.orig	2016-02-02 20:53:13.000000000 +0100
++++ calligra-2.9.11/kexi/main/startup/KexiRecentProjectsModel.h	2020-07-04 17:37:35.774422430 +0200
+@@ -30,8 +30,8 @@
+     Q_OBJECT
+ public:
+     enum AdditionalRoles {
+-        NameRole = 0x9D419D49,
+-        CategoryRole = 0xA2BEF158
++        NameRole = 0xD419D49,
++        CategoryRole = 0x2BEF158
+     };
+ 
+     explicit KexiRecentProjectsModel(const KexiRecentProjects& projects,

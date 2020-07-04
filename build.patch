@@ -1,0 +1,11 @@
+--- calligra-2.9.11/braindump/plugins/stateshape/StatesModel.h.orig	2020-07-04 16:49:52.191491187 +0200
++++ calligra-2.9.11/braindump/plugins/stateshape/StatesModel.h	2020-07-04 16:48:53.161831935 +0200
+@@ -30,7 +30,7 @@
+ {
+ public:
+     enum Role {
+-        SortRole = 0xF14eb9a0
++        SortRole = 0x14eb9a0
+     };
+ public:
+     StatesModel();

@@ -37,6 +37,7 @@ Patch0:		eigen3.patch
 Patch1:		%{orgname}-exiv2.patch
 Patch2:		%{orgname}-icu.patch
 Patch3:		%{orgname}-boost.patch
+Patch4:		build.patch
 URL:		http://www.calligra-suite.org/
 BuildRequires:	GraphicsMagick-devel
 BuildRequires:	OpenColorIO-devel
@@ -380,6 +381,7 @@ the Plasma Active platform.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
 
 %build
 install -d build

@@ -28,7 +28,7 @@ Summary:	Calligra - powerful office suite for KDE
 Summary(pl.UTF-8):	Calligra - potężny pakiet biurowy dla KDE
 Name:		kde4-calligra
 Version:	2.9.11
-Release:	5
+Release:	6
 License:	GPL/LGPL
 Group:		X11/Applications
 Source0:	https://download.kde.org/Attic/%{orgname}-%{version}/%{orgname}-%{version}.tar.xz
@@ -38,6 +38,7 @@ Patch1:		%{orgname}-exiv2.patch
 Patch2:		%{orgname}-icu.patch
 Patch3:		%{orgname}-boost.patch
 Patch4:		build.patch
+Patch5:		gcc11.patch
 URL:		http://www.calligra-suite.org/
 BuildRequires:	GraphicsMagick-devel
 BuildRequires:	OpenColorIO-devel
@@ -74,9 +75,7 @@ BuildRequires:	kde4-okular-devel >= %{kdever}
 BuildRequires:	lcms2-devel
 BuildRequires:	libetonyek-devel
 BuildRequires:	libexif-devel >= 0.6.12
-#BuildRequires:	libicu-devel
-# Prevents rebuilding with different library than the one Qt4 is stuck on
-BuildRequires:	libicu67-devel
+BuildRequires:	libicu-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libodfgen-devel
 BuildRequires:	libpng-devel
@@ -384,10 +383,12 @@ the Plasma Active platform.
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
+%patch5 -p1
 
 %build
 install -d build
 cd build
+export CXXFLAGS="%{rpmcxxflags} -std=c++11"
 %cmake .. \
 	-DBUILD_active:BOOL=OFF \
 	-DBUILD_cstester:BOOL=OFF \

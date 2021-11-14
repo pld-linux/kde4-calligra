@@ -1,0 +1,40 @@
+--- calligra-2.9.11/plan/plugins/schedulers/tj/taskjuggler/FlagList.h~	2016-02-02 17:57:46.000000000 +0100
++++ calligra-2.9.11/plan/plugins/schedulers/tj/taskjuggler/FlagList.h	2021-11-14 23:23:02.465114083 +0100
+@@ -37,7 +37,7 @@
+     }
+     bool hasFlag(const QString& flag) const
+     {
+-        return contains(flag) > 0;
++        return contains(flag) != 0;
+     }
+ } ;
+ 
+--- calligra-2.9.11/plan/plugins/schedulers/tj/taskjuggler/Project.h~	2016-02-02 17:57:46.000000000 +0100
++++ calligra-2.9.11/plan/plugins/schedulers/tj/taskjuggler/Project.h	2021-11-14 23:33:32.310424545 +0100
+@@ -750,7 +750,7 @@
+     }
+     bool isAllowedFlag(const QString& flag) const
+     {
+-        return allowedFlags.contains(flag) > 0;
++        return allowedFlags.contains(flag) != 0;
+     }
+ 
+     const QStringList getAllowedFlags() const
+--- calligra-2.9.11/kexi/migration/mdb/3rdparty/mdbtools/include/mdbtools.h~	2016-02-02 20:53:13.000000000 +0100
++++ calligra-2.9.11/kexi/migration/mdb/3rdparty/mdbtools/include/mdbtools.h	2021-11-14 23:47:14.547740971 +0100
+@@ -18,6 +18,7 @@
+ #ifndef _mdbtools_h_
+ #define _mdbtools_h_
+ 
++#include <glib.h>
+ #ifdef __cplusplus
+   extern "C" {
+ #endif
+@@ -30,7 +31,6 @@
+ #include <unistd.h>
+ #include <ctype.h>
+ #include <string.h>
+-#include <glib.h>
+ 
+ #ifdef HAVE_ICONV
+ #include <iconv.h>

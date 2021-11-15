@@ -17,6 +17,7 @@
 # Conditional build:
 %bcond_without	pdf		# build without PDF support
 %bcond_without	pqxx		# build postgresql driver for kexi
+%bcond_without	doc		# build handbooks
 
 %define		_state		stable
 %define		orgname		calligra
@@ -39,6 +40,7 @@ Patch2:		%{orgname}-icu.patch
 Patch3:		%{orgname}-boost.patch
 Patch4:		build.patch
 Patch5:		gcc11.patch
+Patch6:		no-doc.patch
 URL:		http://www.calligra-suite.org/
 BuildRequires:	GraphicsMagick-devel
 BuildRequires:	OpenColorIO-devel
@@ -384,6 +386,7 @@ the Plasma Active platform.
 %patch3 -p1
 %patch4 -p1
 %patch5 -p1
+%{!?with_doc:%patch6 -p1}
 
 %build
 install -d build

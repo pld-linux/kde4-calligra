@@ -1,0 +1,9 @@
+--- calligra-2.9.11/cmake/productsets/desktop.cmake~	2016-02-02 20:53:13.000000000 +0100
++++ calligra-2.9.11/cmake/productsets/desktop.cmake	2021-11-15 09:23:34.884800706 +0100
+@@ -21,6 +21,4 @@
+         APP_CONVERTER
+         FILEMANAGER
+         OKULAR
+-        # docs
+-        DOC
+ )

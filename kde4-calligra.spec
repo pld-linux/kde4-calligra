@@ -25,11 +25,14 @@
 %define		qtver		4.8.2
 %define		kdeworkspacever	4.11.0
 
+%ifarch %{ix86}
+%undefine	with_doc
+%endif
 Summary:	Calligra - powerful office suite for KDE
 Summary(pl.UTF-8):	Calligra - potężny pakiet biurowy dla KDE
 Name:		kde4-calligra
 Version:	2.9.11
-Release:	6
+Release:	7
 License:	GPL/LGPL
 Group:		X11/Applications
 Source0:	https://download.kde.org/Attic/%{orgname}-%{version}/%{orgname}-%{version}.tar.xz
@@ -410,6 +413,11 @@ rm -rf $RPM_BUILD_ROOT
 	kde_htmldir=%{_kdedocdir} \
 	kde_libs_htmldir=%{_kdedocdir}
 
+%if %{without doc}
+install -d $RPM_BUILD_ROOT%{_desktopdir}/kde4
+cp -p doc/calligra.desktop $RPM_BUILD_ROOT%{_desktopdir}/kde4
+%endif
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -731,7 +739,7 @@ fi
 #%{_datadir}/color/icc/pigment
 %{_iconsdir}/hicolor/*/*/*
 %{_iconsdir}/oxygen/*/*/*
-%{_kdedocdir}/en/calligra
+%{?with_doc:%{_kdedocdir}/en/calligra}
 %dir %{_datadir}/templates/.source
 
 %files karbon
@@ -813,7 +821,7 @@ fi
 %{_desktopdir}/kde4/*kexi.desktop
 %{_datadir}/config/kexirc
 %{_datadir}/kde4/servicetypes/kexi*.desktop
-%{_kdedocdir}/en/kexi/
+%{?with_doc:%{_kdedocdir}/en/kexi}
 # kexi-driver-mysql
 %attr(755,root,root) %{_libdir}/kde4/kexidb_mysqldriver.*
 %attr(755,root,root) %{_libdir}/kde4/keximigrate_mysql.*
@@ -937,7 +945,7 @@ fi
 %{_datadir}/kde4/servicetypes/scripteventaction.desktop
 %{_datadir}/templates/Presentation.desktop
 %{_datadir}/templates/.source/Presentation.*
-%{_kdedocdir}/en/stage/
+%{?with_doc:%{_kdedocdir}/en/stage}
 %{_datadir}/appdata/stage.appdata.xml
 %{_datadir}/mime/packages/x-iwork-keynote-sffkey.xml
 
@@ -1027,7 +1035,7 @@ fi
 %{_datadir}/kde4/servicetypes/sheets_viewplugin.desktop
 %{_datadir}/templates/.source/SpreadSheet.*
 %{_datadir}/templates/SpreadSheet.desktop
-%{_kdedocdir}/en/sheets/
+%{?with_doc:%{_kdedocdir}/en/sheets}
 %{_datadir}/appdata/sheets.appdata.xml
 
 %files words

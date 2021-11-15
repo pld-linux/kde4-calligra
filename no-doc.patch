@@ -7,3 +7,16 @@
 -        # docs
 -        DOC
  )
+--- calligra-2.9.11/CMakeLists.txt~	2021-11-15 09:31:59.000000000 +0100
++++ calligra-2.9.11/CMakeLists.txt	2021-11-15 09:38:58.617049671 +0100
+@@ -1034,10 +1034,6 @@
+   add_subdirectory(active)
+ endif()
+ 
+-if(SHOULD_BUILD_DOC)
+-    add_subdirectory(doc)
+-endif()
+-
+ if(SHOULD_BUILD_PART_QTQUICK)
+     add_subdirectory(qtquick)
+ endif()
